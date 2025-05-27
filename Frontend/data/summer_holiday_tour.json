@@ -1,0 +1,366 @@
+{
+    "summer_holiday_tours": {
+      "title": "Summer Holiday Tours",
+      "subtitle": "Escape the heat with refreshing getaways to stunning hill stations and coastal paradises",
+      "bannerImage": "/SummerTours/s1.png",
+      "description": "Beat the summer heat with our specially curated summer holiday packages. Explore India's most breathtaking hill stations, pristine beaches, and lush valleys offering cool retreats, adventure activities, and unforgettable experiences for families, couples, and solo travelers alike.",
+      "duration": "5-8 days",
+      "price": "Starting from ₹18,000 per person",
+      "inclusions": [
+        "Accommodation in handpicked hotels and resorts",
+        "Daily breakfast and select meals",
+        "Private air-conditioned vehicle with experienced driver",
+        "Professional English-speaking tour guide",
+        "All sightseeing and entrance fees",
+        "Welcome drink on arrival",
+        "One adventure activity per destination",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival at Destination",
+          "description": "Arrive at your chosen summer retreat. Check into your hotel and spend the evening at leisure, perhaps exploring the surroundings or enjoying a welcome dinner featuring local specialties."
+        },
+        {
+          "day": 2,
+          "title": "Local Exploration",
+          "description": "Full day exploring major attractions of your destination. Visit viewpoints, local markets, and historical sites. Experience the unique culture and natural beauty of the region."
+        },
+        {
+          "day": 3,
+          "title": "Adventure Day",
+          "description": "Engage in adventure activities suitable to your destination - trekking, paragliding, river rafting, or snorkeling depending on location. Afternoon at leisure to relax and rejuvenate."
+        },
+        {
+          "day": 4,
+          "title": "Nature Excursion",
+          "description": "Visit nearby natural attractions - waterfalls, lakes, valleys, or beaches. Picnic lunch amidst nature. Evening cultural experience with local music and dance."
+        },
+        {
+          "day": 5,
+          "title": "Local Culture",
+          "description": "Immerse in local culture with visits to traditional villages, craft centers, or monasteries. Try local cuisine cooking class and shop for authentic souvenirs and handicrafts."
+        },
+        {
+          "day": 6,
+          "title": "Leisure Day",
+          "description": "Free day to relax or explore on your own. Optional activities like spa treatments, meditation sessions, or additional excursions available on request."
+        },
+        {
+          "day": 7,
+          "title": "Departure",
+          "description": "After breakfast, check-out and transfer to airport/railway station for your onward journey, carrying memories of a refreshing summer holiday."
+        }
+      ],
+      "highlights": [
+        "Escape the scorching summer heat in naturally cool environments",
+        "Stay in carefully selected accommodations offering stunning views",
+        "Experience thrilling adventure activities suitable for all age groups",
+        "Explore pristine natural landscapes away from urban congestion",
+        "Indulge in seasonal delicacies and fresh local produce",
+        "Connect with diverse cultural traditions across beautiful destinations",
+        "Create lasting memories with customized experiences for families and couples"
+      ],
+      "accommodations": [
+        {
+          "name": "Mountain View Resort",
+          "description": "Luxurious property nestled in the mountains offering panoramic views, modern amenities, spa facilities, and multi-cuisine restaurants featuring local ingredients."
+        },
+        {
+          "name": "Beachside Retreat",
+          "description": "Contemporary resort with direct beach access, infinity pools, water sports facilities, and open-air dining options featuring fresh seafood."
+        },
+        {
+          "name": "Valley Eco Lodge",
+          "description": "Sustainable accommodation in the heart of nature with cottage-style rooms, organic farm-to-table dining, and eco-friendly practices."
+        },
+        {
+          "name": "Heritage Hill Station Hotel",
+          "description": "Colonial-era building restored with modern comforts while maintaining historic charm, featuring gardens, fireplaces, and classic high-tea service."
+        }
+      ],
+      "gallery": [
+        "/images/shimla-mall-road.jpg",
+        "/images/goa-beach-sunset.jpg",
+        "/images/munnar-tea-gardens.jpg",
+        "/images/darjeeling-himalaya-view.jpg",
+        "/images/ooty-botanical-garden.jpg",
+        "/images/andaman-islands-beach.jpg",
+        "/images/manali-adventure.jpg",
+        "/images/coorg-waterfall.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "Himalayan Highlands Escape",
+          "image": "/SummerTours/s3.png",
+          "description": "Discover the majestic beauty of the Himalayas with our specially curated summer package covering Shimla, Manali, and Dharamshala. Enjoy cool mountain air, pine forests, adventure activities, and the unique cultural heritage of these renowned hill stations.",
+          "duration": "6 days",
+          "charge": 20000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Shimla and hotel check-in",
+                "Evening stroll on the historic Mall Road",
+                "Visit Christ Church and Scandal Point",
+                "Welcome dinner with Himachali cuisine"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Visit Kufri for mountain views and activities",
+                "Tour of Viceregal Lodge and Botanical Gardens",
+                "Shopping at Lakkar Bazaar for wooden crafts",
+                "Overnight in Shimla"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Scenic drive to Manali (8 hours)",
+                "Stops at Kullu Valley viewpoints",
+                "Evening arrival in Manali",
+                "Riverside dinner and overnight stay"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Visit Solang Valley for adventure activities",
+                "Tour of Hadimba Temple and Manu Temple",
+                "Explore Old Manali markets and cafes",
+                "Traditional Kullu folk music evening"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Drive to Dharamshala/McLeodganj",
+                "Visit Dalai Lama Temple Complex",
+                "Sunset at Naddi Village viewpoint",
+                "Learn about Tibetan culture and cuisine"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning meditation session with monks",
+                "Trek to Bhagsu Waterfall",
+                "Shopping for Tibetan handicrafts",
+                "Departure from Dharamshala"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Coastal Paradise Getaway",
+          "image": "/SummerTours/s2.png",
+          "description": "Experience the best of India's coastline with our exclusive beach holiday package. Explore the golden beaches of Goa, experience water sports, indulge in fresh seafood cuisine, and enjoy the laid-back coastal lifestyle at premium beachfront accommodations.",
+          "duration": "5 days",
+          "charge": 18000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Goa and resort check-in",
+                "Welcome drink and beach orientation",
+                "Evening sunset cruise with refreshments",
+                "Beachside welcome dinner with live music"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning yoga session on the beach",
+                "Water sports activities (parasailing, jet ski)",
+                "Visit to spice plantation with Goan lunch",
+                "Evening leisure at Calangute Beach"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Heritage tour of Old Goa churches",
+                "Visit Fort Aguada and surrounding beaches",
+                "Afternoon cruise on Mandovi River",
+                "Seafood cooking class and dinner"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Day trip to less-explored South Goa beaches",
+                "Visit Butterfly Beach and Cola Beach",
+                "Beachside picnic lunch",
+                "Evening Goan carnival-style dinner and dance"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Morning at leisure for shopping",
+                "Visit to local markets for souvenirs",
+                "Spa treatment with local ingredients",
+                "Departure from Goa"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Tea Gardens and Valleys",
+          "image": "/SummerTours/s4.png",
+          "description": "Immerse yourself in the lush green landscapes of South India's most beautiful hill stations. This package covers Munnar, Ooty, and Coonoor, offering breathtaking views of tea plantations, misty valleys, colonial heritage, and refreshing mountain air perfect for summer rejuvenation.",
+          "duration": "7 days",
+          "charge": 24000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Munnar and resort check-in",
+                "Evening tea plantation walk",
+                "Visit to local tea museum",
+                "Dinner with Kerala cuisine specialties"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Visit Eravikulam National Park",
+                "Top Station viewpoint excursion",
+                "Tea factory tour and tasting session",
+                "Overnight in Munnar"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning visit to Mattupetty Dam and Echo Point",
+                "Scenic drive to Ooty (5-6 hours)",
+                "Evening arrival and orientation walk",
+                "Dinner at colonial-era restaurant"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Nilgiri Mountain Railway toy train experience",
+                "Visit Doddabetta Peak and Observatory",
+                "Tour of Botanical Gardens",
+                "Shopping at Ooty local market"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Transfer to Coonoor",
+                "Visit Sim's Park and Dolphin's Nose viewpoint",
+                "Tea estate walk with expert guide",
+                "High tea experience at heritage property"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Visit Lamb's Rock and Catherine Falls",
+                "Jungle safari at Mudumalai Wildlife Sanctuary",
+                "Traditional Nilgiri tribal dance performance",
+                "Farewell bonfire dinner"
+              ]
+            },
+            {
+              "day": 7,
+              "activities": [
+                "Morning nature walk",
+                "Visit to handmade chocolate factory",
+                "Last-minute souvenir shopping",
+                "Departure from Coonoor"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Island Paradise Experience",
+          "image": "/SummerTours/s5.png",
+          "description": "Escape to the pristine Andaman Islands for the ultimate summer holiday. Discover crystal-clear waters, coral reefs, white sandy beaches, and lush tropical forests. This package offers the perfect balance of relaxation, water activities, and nature exploration.",
+          "duration": "8 days",
+          "charge": 35000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Port Blair and hotel check-in",
+                "Visit Cellular Jail and attend Light & Sound show",
+                "Evening at Corbyn's Cove Beach",
+                "Welcome dinner with seafood specialties"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Ferry to Havelock Island",
+                "Check-in at beach resort",
+                "Visit Radhanagar Beach (Asia's Best Beach)",
+                "Sunset beach yoga session"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Snorkeling at Elephant Beach",
+                "Glass-bottom boat ride over coral reefs",
+                "Beach picnic lunch",
+                "Evening at leisure with beachside dinner"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Scuba diving experience for beginners",
+                "Visit to Kalapathar Beach",
+                "Kayaking through mangrove creeks",
+                "Overnight in Havelock"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Ferry to Neil Island",
+                "Check-in at eco-resort",
+                "Visit Bharatpur and Laxmanpur Beaches",
+                "Sunset view at Natural Bridge"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning cycling tour of Neil Island",
+                "Snorkeling at Coral Point",
+                "Afternoon at leisure",
+                "Fresh catch seafood barbecue dinner"
+              ]
+            },
+            {
+              "day": 7,
+              "activities": [
+                "Return to Port Blair",
+                "Visit Ross Island and North Bay",
+                "Shopping for pearl and shell crafts",
+                "Farewell dinner with cultural show"
+              ]
+            },
+            {
+              "day": 8,
+              "activities": [
+                "Morning visit to Anthropological Museum",
+                "Visit Chatham Saw Mill and Forest Museum",
+                "Last-minute shopping",
+                "Departure from Port Blair"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

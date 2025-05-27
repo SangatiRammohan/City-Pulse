@@ -1,0 +1,265 @@
+/* ContactSection.css */
+
+:root {
+  --white: #ffffff;
+  --dark-gray: #212529;
+  --overlay-gray: rgba(33, 37, 41, 0.6);
+  --modal-gray: rgba(33, 37, 41, 0.9);
+  --primary-green: #54a15d;
+  --hover-green: #5ea571;
+  --light-shadow-green: rgba(74, 243, 139, 0.2);
+  --semi-transparent-white-1: rgba(255, 255, 255, 0.1);
+  --semi-transparent-white-2: rgba(255, 255, 255, 0.2);
+  --semi-transparent-white-3: rgba(255, 255, 255, 0.3);
+  --text-shadow-dark: rgba(0, 0, 0, 0.5);
+  --text-shadow-light: rgba(0, 0, 0, 0.4);
+  --transition-speed: 0.3s;
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  --light-grey: #f8f9fa;
+}
+
+.contact-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.contact-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--dark-gray);
+  font-size: 2.5rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+/* Office Locations */
+.office-locations {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.office-card {
+  background-color: var(--light-grey);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  transition: transform var(--transition-speed);
+}
+
+.office-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--hover-shadow);
+}
+
+.office-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+  font-size: 1.4rem;
+}
+
+.office-card p {
+  margin: 0.5rem 0;
+  display: flex;
+  align-items: center;
+  color: var(--dark-gray);
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 1.1rem;
+}
+
+/* Map Container */
+.map-container {
+  width: 100%;
+  margin-top: 2rem;
+  position: relative; /* Ensures map is contained within the flow */
+  z-index: 0; /* Ensures it doesn't overlap other sections */
+}
+
+/* Contact Map Styles */
+.contact-map {
+  width: 100%;
+  height: 400px;
+  border-radius: 8px;
+  overflow: hidden; /* Prevent map from overflowing */
+  box-shadow: var(--box-shadow);
+  background-color: var(--light-grey);
+  position: relative; /* Keeps it within the document flow */
+  z-index: 1; /* Ensures map doesn't overlap content */
+}
+
+/* Map Placeholder (remove once actual map is implemented) */
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-shadow-green);
+  color: var(--dark-gray);
+  font-size: 1.2rem;
+  text-align: center;
+  z-index: 10; /* Ensure placeholder stays on top of the map */
+}
+
+/* FAQ and Form Container */
+.faq-form-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* FAQ Section */
+.faq-section {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.faq-section h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+  font-size: 1.8rem;
+}
+
+.accordion-item {
+  margin-bottom: 1rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  background-color: var(--light-grey);
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color var(--transition-speed);
+}
+
+.accordion-header:hover {
+  background-color: var(--light-shadow-green);
+}
+
+.accordion-header.active {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.accordion-icon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.accordion-content {
+  padding: 1rem 1.5rem;
+  background-color: var(--white);
+  border-top: 1px solid var(--light-grey);
+}
+
+/* Contact Form */
+.contact-form {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+}
+
+.contact-form h2 {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  color: var(--dark-gray);
+  font-size: 1.8rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--dark-gray);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--light-grey);
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-green);
+  outline: none;
+  box-shadow: 0 0 0 3px var(--light-shadow-green);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submit-btn {
+  background-color: var(--primary-green);
+  color: var(--white);
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+}
+
+.submit-btn:hover {
+  background-color: var(--hover-green);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .faq-form-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-section,
+  .contact-form {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-section {
+    padding: 1rem;
+  }
+  
+  .office-locations {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-map {
+    height: 300px;
+  }
+}

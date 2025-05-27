@@ -1,0 +1,215 @@
+{
+    "goa_tours": {
+      "title": "Goa Beach Paradise",
+      "subtitle": "Experience the vibrant beaches and Portuguese heritage of India's favorite coastal destination",
+      "bannerImage": "/GoaTours/g1.png",
+      "description": "Discover the perfect blend of sun, sand, and cultural heritage in Goa. From pristine beaches and water sports to colonial architecture and vibrant nightlife, our Goa tour packages offer the ultimate coastal getaway for every type of traveler.",
+      "duration": "2-4 days",
+      "price": "Starting from ₹10,000 per person",
+      "inclusions": [
+        "Beachside resort accommodation",
+        "Daily breakfast and one special seafood dinner",
+        "Airport/railway station transfers",
+        "Half-day sightseeing tour",
+        "One water sport activity per person",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival & Beach Introduction",
+          "description": "Arrive in Goa, check into your beachside resort, and spend the afternoon relaxing on the beach. Evening welcome dinner with authentic Goan cuisine and cultural performance."
+        },
+        {
+          "day": 2,
+          "title": "Beach Hopping & Water Sports",
+          "description": "Full day of beach exploration and water sports. Visit multiple beaches including Baga, Calangute, and Anjuna. Try parasailing, jet skiing, or banana boat rides (one activity included)."
+        },
+        {
+          "day": 3,
+          "title": "Heritage & Culture",
+          "description": "Morning visit to Old Goa churches and Portuguese heritage sites. Afternoon spice plantation tour with authentic Goan lunch. Evening free for shopping or nightlife."
+        },
+        {
+          "day": 4,
+          "title": "Leisure & Departure",
+          "description": "Morning at leisure for last-minute beach time or shopping. Check-out and departure with beautiful memories of your Goan adventure."
+        }
+      ],
+      "highlights": [
+        "Stay at prime beachside locations",
+        "Experience the vibrant nightlife of North Goa",
+        "Visit UNESCO World Heritage churches",
+        "Enjoy thrilling water sports",
+        "Taste authentic Goan cuisine with Portuguese influences",
+        "Explore colorful spice plantations"
+      ],
+      "accommodations": [
+        {
+          "name": "Calangute Beach Resort",
+          "description": "Modern beachfront property with direct beach access, swimming pools, seafood restaurant, and evening entertainment."
+        },
+        {
+          "name": "South Goa Luxury Resort",
+          "description": "Upscale property on the quieter beaches of South Goa offering premium amenities, spa facilities, and private beach access."
+        },
+        {
+          "name": "Baga Beachside Hotel",
+          "description": "Centrally located property near Baga Beach with easy access to nightlife, restaurants, and water sports."
+        },
+        {
+          "name": "Portuguese Heritage Villa",
+          "description": "Boutique accommodation in restored Portuguese mansion offering authentic colonial experience with modern amenities."
+        }
+      ],
+      "gallery": [
+        "/images/goa-beaches.jpg",
+        "/images/goa-churches.jpg",
+        "/images/goa-water-sports.jpg",
+        "/images/goa-nightlife.jpg",
+        "/images/goa-seafood.jpg",
+        "/images/goa-spice-plantation.jpg",
+        "/images/goa-sunset.jpg",
+        "/images/goa-beach-shacks.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "North Goa Beach Circuit",
+          "image": "/GoaTours/g2.png",
+          "description": "Experience the vibrant energy of North Goa's famous beaches, water sports, and nightlife. Visit Baga, Calangute, Anjuna, and Vagator beaches along with flea markets and beach shacks.",
+          "duration": "3 days",
+          "charge": 12000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at Calangute beach resort",
+                "Evening at Baga Beach with welcome dinner at beach shack",
+                "Optional beach party experience"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Water sports at Calangute Beach (parasailing, jet skiing, banana boat)",
+                "Visit to Anjuna Flea Market (Wednesdays only) or Tibetan Market",
+                "Sunset and dinner at Anjuna Beach"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning cruise on Mandovi River",
+                "Visit to Fort Aguada",
+                "Free time for shopping and beach activities",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "South Goa Serenity",
+          "image": "/GoaTours/g3.png",
+          "description": "Discover the peaceful and pristine beaches of South Goa with its luxury resorts, clean shores, and relaxed atmosphere. Perfect for couples and those seeking tranquility.",
+          "duration": "2 days",
+          "charge": 14000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at luxury beach resort",
+                "Relaxation time at Palolem or Agonda Beach",
+                "Sunset yoga session on the beach",
+                "Candlelight dinner at beachside restaurant"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning dolphin spotting cruise",
+                "Visit to Cabo de Rama Fort",
+                "Beach hopping to Butterfly and Honeymoon beaches",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Goa Heritage Trail",
+          "image": "/GoaTours/g4.png",
+          "description": "Explore Goa's rich Portuguese colonial heritage with visits to historic churches, mansions, and cultural sites. Experience the unique blend of Indian and European influences.",
+          "duration": "3 days",
+          "charge": 13500,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at heritage hotel in Panjim",
+                "Old Goa churches tour including Basilica of Bom Jesus and Se Cathedral",
+                "Evening walk in Fontainhas Latin Quarter"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Visit to Ancestral Goa cultural museum",
+                "Tour of Mangueshi and Shanta Durga temples",
+                "Spice plantation visit with traditional lunch",
+                "Evening river cruise with cultural performance"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning visit to Reis Magos Fort",
+                "Tour of Portuguese mansions in Chandor",
+                "Shopping for Goan souvenirs and handicrafts",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Goa Adventure Package",
+          "image": "/GoaTours/g5.png",
+          "description": "Get your adrenaline pumping with a weekend of thrilling activities in Goa. From water sports to jungle treks, this package combines adventure with beach relaxation.",
+          "duration": "4 days",
+          "charge": 16000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at adventure resort",
+                "Introductory scuba diving session in pool",
+                "Evening beach bonfire with barbecue dinner"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Full day water sports package (parasailing, jet skiing, banana boat, bumper ride)",
+                "Sunset kayaking through mangroves",
+                "Beach party experience"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning trek to Dudhsagar Waterfalls",
+                "Jeep safari through spice plantations",
+                "Evening cruise with fishing experience"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Scuba diving trip to Grande Island (for certified divers) or snorkeling",
+                "Free time for beach relaxation",
+                "Departure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

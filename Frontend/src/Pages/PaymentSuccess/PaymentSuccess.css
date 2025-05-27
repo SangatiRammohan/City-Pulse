@@ -1,0 +1,175 @@
+:root {
+  --white: #ffffff;
+  --dark-gray: #212529;
+  --overlay-gray: rgba(33, 37, 41, 0.6);
+  --modal-gray: rgba(33, 37, 41, 0.9);
+  --primary-green: #54a15d;
+  --hover-green: #5ea571;
+  --light-shadow-green: rgba(74, 243, 139, 0.2);
+  --semi-transparent-white-1: rgba(255, 255, 255, 0.1);
+  --semi-transparent-white-2: rgba(255, 255, 255, 0.2);
+  --semi-transparent-white-3: rgba(255, 255, 255, 0.3);
+  --text-shadow-dark: rgba(0, 0, 0, 0.5);
+  --text-shadow-light: rgba(0, 0, 0, 0.4);
+  --transition-speed: 0.3s;
+}
+
+.payment-success-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--semi-transparent-white-1);
+  padding: 2rem;
+}
+
+.success-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 10px 25px var(--overlay-gray);
+  max-width: 500px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.success-icon {
+  margin-bottom: 1rem;
+}
+
+.success-card h2 {
+  color: var(--primary-green);
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.booking-details {
+  width: 100%;
+  background-color: var(--semi-transparent-white-1);
+  border-radius: 8px;
+  padding: 1.25rem;
+  border: 1px solid var(--semi-transparent-white-2);
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  color: var(--dark-gray);
+  font-size: 0.95rem;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-row span:first-child {
+  font-weight: 600;
+}
+
+.success-actions {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.download-invoice,
+.back-to-home {
+  flex: 1;
+  padding: 0.875rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+}
+
+.download-invoice {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.download-invoice:hover {
+  background-color: var(--hover-green);
+}
+
+.back-to-home {
+  background-color: var(--semi-transparent-white-2);
+  color: var(--dark-gray);
+}
+
+.back-to-home:hover {
+  background-color: var(--semi-transparent-white-3);
+}
+
+.confirmation-message {
+  font-size: 0.85rem;
+  color: var(--overlay-gray);
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 480px) {
+  .success-card {
+    padding: 1.5rem;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .success-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .download-invoice,
+  .back-to-home {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  .payment-success-container {
+    background-color: var(--modal-gray);
+  }
+
+  .success-card {
+    background-color: var(--dark-gray);
+    color: var(--white);
+  }
+
+  .success-card h2 {
+    color: var(--primary-green);
+  }
+
+  .booking-details {
+    background-color: var(--overlay-gray);
+  }
+
+  .detail-row {
+    color: var(--white);
+  }
+
+  .back-to-home {
+    background-color: var(--semi-transparent-white-1);
+    color: var(--white);
+  }
+
+  .confirmation-message {
+    color: var(--semi-transparent-white-3);
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}

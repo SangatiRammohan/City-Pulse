@@ -1,0 +1,79 @@
+.disability-popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.disability-popup-content {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 15px var(--text-shadow-dark);
+}
+
+.disability-popup-content h2 {
+  margin-top: 0;
+  color: var(--white);
+  border-bottom: 1px solid var(--semi-transparent-white-1);
+  padding-bottom: 0.75rem;
+}
+
+.disability-popup-content p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+
+.disability-popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.disability-popup-buttons button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all var(--transition-speed);
+}
+
+.primary-button {
+  background-color: var(--primary-green);
+  color: var(--white);
+}
+
+.primary-button:hover {
+  background-color: var(--hover-green);
+  box-shadow: 0 0 10px var(--light-shadow-green);
+}
+
+.secondary-button {
+  background-color: var(--semi-transparent-white-2);
+  color: var(--white);
+}
+
+.secondary-button:hover {
+  background-color: var(--semi-transparent-white-3);
+}
+
+.close-button {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid var(--semi-transparent-white-2) !important;
+}
+
+.close-button:hover {
+  background-color: var(--semi-transparent-white-1);
+}

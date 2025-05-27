@@ -1,0 +1,204 @@
+{
+    "weekend_tours": {
+      "title": "Weekend Getaway Tours",
+      "subtitle": "Explore India's most beautiful destinations in just a weekend",
+      "bannerImage": "/WeekendTours/w1.png",
+      "description": "Our carefully curated weekend packages let you escape the routine and discover incredible destinations across India. Perfect for busy professionals looking for quick rejuvenation without taking extended time off work.",
+      "duration": "2-3 days",
+      "price": "Starting from ₹10,000 per person",
+      "inclusions": [
+        "Accommodation in handpicked hotels",
+        "Daily breakfast and dinner",
+        "All transfers in air-conditioned vehicles",
+        "Sightseeing as per itinerary",
+        "Experienced tour guide",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival & Exploration",
+          "description": "Arrive at your destination, check into your hotel, and begin exploring the local attractions. Enjoy a welcome dinner featuring local cuisine to kickstart your weekend adventure."
+        },
+        {
+          "day": 2,
+          "title": "Full Day Excursion",
+          "description": "After breakfast, embark on a full-day tour of major attractions. Experience the culture, cuisine, and natural beauty of the destination with guided tours and free time for personal exploration."
+        },
+        {
+          "day": 3,
+          "title": "Leisure & Departure",
+          "description": "Morning at leisure to relax or explore nearby spots at your own pace. Check out from the hotel by noon and depart with beautiful memories of your weekend getaway."
+        }
+      ],
+      "highlights": [
+        "Handpicked accommodations in prime locations",
+        "Curated experiences to maximize your limited time",
+        "Flexible departure dates every weekend",
+        "Perfect balance of guided tours and free time",
+        "Option to extend your stay with customized add-ons"
+      ],
+      "accommodations": [
+        {
+          "name": "Goa Beach Resort",
+          "description": "Beachfront property with modern amenities and stunning ocean views. Features swimming pool, spa, and multiple dining options."
+        },
+        {
+          "name": "Udaipur Heritage Hotel",
+          "description": "Converted palace offering royal hospitality with lakeside views, traditional architecture, and authentic Rajasthani experiences."
+        },
+        {
+          "name": "Munnar Tea Estate Stay",
+          "description": "Cozy cottages amidst rolling tea plantations with misty mountain views, organic dining, and nature trails."
+        },
+        {
+          "name": "Rishikesh Riverside Resort",
+          "description": "Serene property on the banks of the Ganges with yoga facilities, adventure sports access, and spiritual ambiance."
+        }
+      ],
+      "gallery": [
+        "/images/goa-beaches.jpg",
+        "/images/udaipur-palace.jpg",
+        "/images/munnar-tea.jpg",
+        "/images/rishikesh-ganges.jpg",
+        "/images/beach-activities.jpg",
+        "/images/palace-interior.jpg",
+        "/images/hill-trekking.jpg",
+        "/images/river-rafting.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "Goa Beach Weekend",
+          "image": "/WeekendTours/w2.png",
+          "description": "Experience the vibrant beach life of Goa with its golden sands, water sports, and famous nightlife. Explore Portuguese heritage in Old Goa, enjoy fresh seafood, and relax with beachside cocktails in this perfect tropical getaway.",
+          "duration": "3 days",
+          "charge": 12000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival at Goa airport and transfer to beach resort",
+                "Welcome drink and check-in",
+                "Evening at Calangute or Baga Beach",
+                "Seafood dinner at beachside shack"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Old Goa churches (Basilica of Bom Jesus and Se Cathedral)",
+                "Spice plantation tour with traditional Goan lunch",
+                "Afternoon cruise on Mandovi River with cultural performances",
+                "Evening free for beach activities or nightlife exploration"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning at leisure for swimming or water sports",
+                "Visit to Anjuna flea market (if Wednesday) or Fort Aguada",
+                "Lunch at local restaurant",
+                "Departure for airport"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Udaipur Royal Retreat",
+          "image":"/WeekendTours/w3.png",
+          "description": "Discover the romantic city of Udaipur with its majestic palaces, serene lakes, and royal heritage. Explore the City Palace, enjoy boat rides on Lake Pichola, and experience the rich culture of Rajasthan in this perfect weekend escape.",
+          "duration": "2 days",
+          "charge": 15000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at heritage hotel",
+                "Visit to City Palace and Crystal Gallery",
+                "Boat ride on Lake Pichola with views of Lake Palace",
+                "Evening cultural performance at Bagore Ki Haveli",
+                "Dinner at rooftop restaurant with lake views"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Saheliyon Ki Bari and Jagdish Temple",
+                "Shopping at local markets for handicrafts and textiles",
+                "Lunch at traditional Rajasthani restaurant",
+                "Visit to Monsoon Palace for sunset views",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Rishikesh Spiritual & Adventure",
+          "image": "/WeekendTours/w4.png",
+          "description": "Combine spiritual awakening with adventure in Rishikesh, the yoga capital of the world. Participate in yoga and meditation sessions, witness the magical Ganga Aarti, and enjoy thrilling white-water rafting on the sacred Ganges River.",
+          "duration": "3 days",
+          "charge": 13000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at riverside resort",
+                "Visit to Beatles Ashram and Triveni Ghat",
+                "Evening Ganga Aarti ceremony at Parmarth Niketan",
+                "Dinner at organic café"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning yoga session by the Ganges",
+                "White-water rafting expedition (16km stretch)",
+                "Visit to Laxman Jhula and Ram Jhula",
+                "Evening meditation session",
+                "Bonfire dinner"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Sunrise trek to Kunjapuri Temple",
+                "Visit to local ashram for spiritual discourse",
+                "Lunch at riverside café",
+                "Free time for ayurvedic massage or shopping",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Lonavala Mountain Escape",
+          "image": "/WeekendTours/w5.png",
+          "description": "Retreat to the misty mountains of Lonavala, a popular hill station near Mumbai and Pune. Explore ancient caves, enjoy panoramic viewpoints, and savor the famous Lonavala chikki while enjoying the cool climate and lush greenery.",
+          "duration": "2 days",
+          "charge": 11000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at mountain resort",
+                "Visit to Tiger's Leap and Duke's Nose viewpoints",
+                "Afternoon visit to Karla and Bhaja Caves",
+                "Evening tea with pakoras at Lonavala Lake",
+                "Dinner at resort with mountain views"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Rajmachi Fort (short trek)",
+                "Stop at Bushi Dam and Lion's Point",
+                "Shopping for Lonavala chikki and fudge",
+                "Lunch at local restaurant",
+                "Departure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
