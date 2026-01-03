@@ -25,7 +25,8 @@ const {
   sendEmail,
   sendBookingConfirmation, 
   sendContactFormEmail,
-  sendBookingNotificationToCompany
+  sendBookingNotificationToCompany,
+  sendPasswordResetOTP
 } = require('./services/emailService');
 
 const { generateInvoicePDF } = require('./services/pdfService');
@@ -42,6 +43,7 @@ const User = require('./models/User');
 const Booking = require('./models/Booking');
 const Newsletter = require('./models/Newsletter');
 const Contact = require('./models/Contact');
+const PasswordReset = require('./models/PasswordReset');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -330,6 +332,321 @@ app.get('/api/auth/me', async (req, res) => {
     res.status(401).json({
       status: 'error',
       message: 'Invalid or expired token'
+    });
+  }
+});
+
+// ============================================
+// PASSWORD RESET ROUTES (OTP BASED)
+// ============================================
+
+// Step 1: Send OTP to Email
+app.post('/api/auth/forgot-password', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    console.log('🔐 Forgot password request for:', email);
+
+    if (!email) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email is required'
+      });
+    }
+
+    // Find user
+    const user = await User.findOne({ email: email.toLowerCase() });
+
+    // Always return success even if user not found (security best practice)
+    if (!user) {
+      console.log('⚠️ User not found, but returning success for security');
+      return res.status(200).json({
+        status: 'success',
+        message: 'If an account exists with this email, you will receive a verification code.'
+      });
+    }
+
+    // Delete any existing unused OTPs for this email
+    await PasswordReset.deleteMany({ email: user.email, used: false });
+
+    // Generate 6-digit OTP
+    const otp = PasswordReset.generateOTP();
+
+    // Save OTP to database
+    const passwordReset = new PasswordReset({
+      email: user.email,
+      otp: otp,
+      userId: user._id,
+      expiresAt: new Date(Date.now() + 15 * 60 * 1000), // 15 minutes
+      ipAddress: req.ip || req.connection.remoteAddress,
+      userAgent: req.headers['user-agent']
+    });
+
+    await passwordReset.save();
+
+    console.log('✅ OTP generated for user:', user.email, 'OTP:', otp);
+
+    // Send email with OTP
+    try {
+      await sendPasswordResetOTP(user.email, otp, user.name);
+      console.log('✅ Password reset OTP email sent');
+    } catch (emailError) {
+      console.error('⚠️ Email sending failed:', emailError.message);
+      // Continue anyway - OTP is saved in database
+    }
+
+    res.status(200).json({
+      status: 'success',
+      message: 'If an account exists with this email, you will receive a verification code.',
+      data: {
+        email: user.email // Send email back for UI to show
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Forgot password error:', error);
+    
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to process password reset request',
+      error: process.env.NODE_ENV === 'development' ? error.message : {}
+    });
+  }
+});
+
+// Step 2: Verify OTP
+app.post('/api/auth/verify-otp', async (req, res) => {
+  try {
+    const { email, otp } = req.body;
+
+    console.log('🔐 Verify OTP request:', { email, otp });
+
+    // Validation
+    if (!email || !otp) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email and verification code are required'
+      });
+    }
+
+    // Find OTP record
+    const passwordReset = await PasswordReset.findOne({ 
+      email: email.toLowerCase(),
+      otp: otp 
+    }).sort({ createdAt: -1 });
+
+    if (!passwordReset) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Invalid verification code'
+      });
+    }
+
+    // Check if OTP is valid
+    if (!passwordReset.isValid()) {
+      if (passwordReset.used) {
+        return res.status(400).json({
+          status: 'error',
+          message: 'This verification code has already been used'
+        });
+      }
+      
+      if (passwordReset.expiresAt < new Date()) {
+        return res.status(400).json({
+          status: 'error',
+          message: 'This verification code has expired. Please request a new one.'
+        });
+      }
+      
+      if (passwordReset.attempts >= passwordReset.maxAttempts) {
+        return res.status(400).json({
+          status: 'error',
+          message: 'Maximum verification attempts exceeded. Please request a new code.'
+        });
+      }
+    }
+
+    // Increment attempts
+    await passwordReset.incrementAttempts();
+
+    console.log('✅ OTP verified successfully for:', email);
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Verification code confirmed. You can now reset your password.',
+      data: {
+        email: passwordReset.email,
+        resetToken: passwordReset._id // Send ID as a temporary token for next step
+      }
+    });
+
+  } catch (error) {
+    console.error('❌ Verify OTP error:', error);
+    
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to verify code',
+      error: process.env.NODE_ENV === 'development' ? error.message : {}
+    });
+  }
+});
+
+// Step 3: Reset Password with Verified OTP
+app.post('/api/auth/reset-password', async (req, res) => {
+  try {
+    const { email, otp, password, confirmPassword } = req.body;
+
+    console.log('🔐 Reset password request for:', email);
+
+    // Validation
+    if (!email || !otp || !password || !confirmPassword) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email, verification code, and passwords are required'
+      });
+    }
+
+    if (password !== confirmPassword) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Passwords do not match'
+      });
+    }
+
+    if (password.length < 8) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Password must be at least 8 characters'
+      });
+    }
+
+    // Find OTP record
+    const passwordReset = await PasswordReset.findOne({ 
+      email: email.toLowerCase(),
+      otp: otp 
+    }).sort({ createdAt: -1 });
+
+    if (!passwordReset) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Invalid verification code'
+      });
+    }
+
+    // Check if OTP is still valid
+    if (!passwordReset.isValid()) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Verification code has expired or been used. Please request a new one.'
+      });
+    }
+
+    // Find user
+    const user = await User.findById(passwordReset.userId);
+
+    if (!user) {
+      return res.status(404).json({
+        status: 'error',
+        message: 'User not found'
+      });
+    }
+
+    // Update password
+    user.password = password; // Will be hashed by pre-save hook
+    await user.save();
+
+    // Mark OTP as used
+    await passwordReset.markAsUsed();
+
+    // Delete all other unused OTPs for this user
+    await PasswordReset.deleteMany({ 
+      email: user.email, 
+      used: false,
+      _id: { $ne: passwordReset._id }
+    });
+
+    console.log('✅ Password reset successful for user:', user.email);
+
+    res.status(200).json({
+      status: 'success',
+      message: 'Password has been reset successfully. You can now sign in with your new password.'
+    });
+
+  } catch (error) {
+    console.error('❌ Reset password error:', error);
+    
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to reset password',
+      error: process.env.NODE_ENV === 'development' ? error.message : {}
+    });
+  }
+});
+
+// Resend OTP
+app.post('/api/auth/resend-otp', async (req, res) => {
+  try {
+    const { email } = req.body;
+
+    console.log('🔐 Resend OTP request for:', email);
+
+    if (!email) {
+      return res.status(400).json({
+        status: 'error',
+        message: 'Email is required'
+      });
+    }
+
+    // Find user
+    const user = await User.findOne({ email: email.toLowerCase() });
+
+    if (!user) {
+      // Return success for security
+      return res.status(200).json({
+        status: 'success',
+        message: 'If an account exists with this email, you will receive a new verification code.'
+      });
+    }
+
+    // Delete old unused OTPs
+    await PasswordReset.deleteMany({ email: user.email, used: false });
+
+    // Generate new OTP
+    const otp = PasswordReset.generateOTP();
+
+    // Save new OTP
+    const passwordReset = new PasswordReset({
+      email: user.email,
+      otp: otp,
+      userId: user._id,
+      expiresAt: new Date(Date.now() + 15 * 60 * 1000),
+      ipAddress: req.ip || req.connection.remoteAddress,
+      userAgent: req.headers['user-agent']
+    });
+
+    await passwordReset.save();
+
+    console.log('✅ New OTP generated:', otp);
+
+    // Send email
+    try {
+      await sendPasswordResetOTP(user.email, otp, user.name);
+      console.log('✅ New OTP email sent');
+    } catch (emailError) {
+      console.error('⚠️ Email sending failed:', emailError.message);
+    }
+
+    res.status(200).json({
+      status: 'success',
+      message: 'A new verification code has been sent to your email.'
+    });
+
+  } catch (error) {
+    console.error('❌ Resend OTP error:', error);
+    
+    res.status(500).json({
+      status: 'error',
+      message: 'Failed to resend verification code'
     });
   }
 });

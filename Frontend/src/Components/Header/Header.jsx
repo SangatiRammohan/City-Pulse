@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authAPI } from '../../services/api';
 import Swal from 'sweetalert2';
-import { User, LogOut, Package } from 'lucide-react';
+import { User, LogOut, Menu, X, ChevronDown, Package } from 'lucide-react';
 import "./Header.css";
 import logo from '../../assets/HeaderAssets/logo.png';
 
@@ -16,6 +16,7 @@ const Header = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [user, setUser] = useState(null);
   const [showProfileDropdown, setShowProfileDropdown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   
   const location = useLocation();
   const navigate = useNavigate();
@@ -33,6 +34,17 @@ const Header = () => {
     setUser(storedUser);
   };
   
+  // Handle scroll effect
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  
+  // Close menus on outside click
   useEffect(() => {
     const handleOutsideClick = (e) => {
       if (isMenuOpen && !e.target.closest('.main-nav') && !e.target.closest('.mobile-menu-btn')) {
@@ -51,9 +63,10 @@ const Header = () => {
     };
   }, [isMenuOpen, showProfileDropdown]);
 
+  // Close mobile menu on window resize
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > 768) {
+      if (window.innerWidth > 1024) {
         setIsMenuOpen(false);
         setActiveDropdown(null);
       }
@@ -66,30 +79,45 @@ const Header = () => {
     };
   }, []);
   
+  // Close menu on route change
   useEffect(() => {
     setIsMenuOpen(false);
     setShowProfileDropdown(false);
+    setActiveDropdown(null);
   }, [location]);
   
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+  
   const toggleDropdown = (index, e) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 1024) {
       e.preventDefault();
       setActiveDropdown(activeDropdown === index ? null : index);
     }
   };
   
   const handleNavigation = (path) => {
-    if (navigate) {
-      navigate(path);
-    }
+    navigate(path);
     setIsMenuOpen(false);
-    window.scrollTo(0, 0);
+    setActiveDropdown(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handlePackageClick = async (packageKey) => {
     setSelectedPackage(packageKey);
     setIsMenuOpen(false);
-    window.scrollTo(0, 0);
+    setActiveDropdown(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 
     try {
       const modulePath = `../../packagesData/${packageKey}.json`;
@@ -132,9 +160,10 @@ const Header = () => {
       text: 'Are you sure you want to logout?',
       icon: 'question',
       showCancelButton: true,
-      confirmButtonColor: '#54a15d',
+      confirmButtonColor: '#6fbf73',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Yes, Logout'
+      confirmButtonText: 'Yes, Logout',
+      cancelButtonText: 'Cancel'
     });
 
     if (result.isConfirmed) {
@@ -148,8 +177,9 @@ const Header = () => {
         icon: 'success',
         title: 'Logged Out',
         text: 'You have been logged out successfully',
-        confirmButtonColor: '#54a15d',
-        timer: 1500
+        confirmButtonColor: '#6fbf73',
+        timer: 1500,
+        showConfirmButton: false
       });
       
       navigate('/');
@@ -167,129 +197,214 @@ const Header = () => {
   ];
 
   return (
-    <header className="site-header">
-      <div className="container">
-        <div className="header-content">
-          <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
-            <img src={logo} alt="City Pulse Logo" />
-            <span className="logo-text">City Pulse</span>
-          </Link>
-          
-          <button 
-            className="mobile-menu-btn"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-           {isMenuOpen ? '✖' : '☰'}
-          </button>
-          
-          <nav className={`main-nav ${isMenuOpen ? 'active' : ''}`}>
-            <ul>
-              <li><Link to="/" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
-              <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-              <li><Link to="/guide" onClick={() => setIsMenuOpen(false)}>Guide</Link></li>
-              <li className={`dropdown ${activeDropdown === 3 ? 'active' : ''}`}>
-                <Link
-                  to="/packages"
-                  className="dropdown-trigger"
-                  onClick={(e) => {
-                    if (window.innerWidth <= 768) {
-                      e.preventDefault();
-                      toggleDropdown(3, e);
-                    } else {
-                      setIsMenuOpen(false);
-                    }
-                  }}
-                >
-                  Packages
-                </Link>
-                <div className="dropdown-content">
-                  {packageOptions.map((option, index) => (
-                    <Link key={index} to={option.path} onClick={() => setIsMenuOpen(false)}>
-                      {option.display}
-                    </Link>
-                  ))}
-                </div>
-              </li>
-              <li><Link to="/testimonials" onClick={() => setIsMenuOpen(false)}>Testimonials</Link></li>
-              <li><Link to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-            </ul>
+    <>
+      <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
+        <div className="header-container">
+          <div className="header-content">
+            {/* Logo */}
+            <Link to="/" className="logo" onClick={() => setIsMenuOpen(false)}>
+              <img src={logo} alt="City Pulse Logo" />
+              <span className="logo-text">City Pulse</span>
+            </Link>
             
-            {/* Mobile Auth Buttons/Profile */}
-            {!isAuthenticated ? (
-              <div className="mobile-sign-buttons">
-                <Link to="/signup" className="sign-button" onClick={handleSignUp}>Sign Up</Link>
-                <Link to="/signin" className="sign-button" onClick={handleSignIn}>Sign In</Link>
-              </div>
-            ) : (
-              <div className="mobile-profile-menu">
-                <div className="mobile-user-info">
-                  <div className="mobile-avatar">
-                    {user?.name?.charAt(0).toUpperCase()}
-                  </div>
-                  <div className="mobile-user-details">
-                    <p className="mobile-user-name">{user?.name}</p>
-                    <p className="mobile-user-email">{user?.email}</p>
-                  </div>
-                </div>
-                <div className="mobile-profile-actions">
-                  <button onClick={handleMyProfile} className="mobile-profile-btn">
-                    <User size={18} />
-                    My Profile
+            {/* Desktop Navigation */}
+            <nav className="desktop-nav">
+              <ul className="nav-list">
+                <li className="nav-item">
+                  <Link to="/" className="nav-link">Home</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/about" className="nav-link">About</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/guide" className="nav-link">Guide</Link>
+                </li>
+                <li className="nav-item dropdown-nav">
+                  <button className="nav-link dropdown-trigger">
+                    Packages <ChevronDown size={16} className="dropdown-icon" />
                   </button>
-                  <button onClick={handleLogout} className="mobile-logout-btn">
-                    <LogOut size={18} />
-                    Logout
-                  </button>
+                  <div className="dropdown-menu">
+                    {packageOptions.map((option, index) => (
+                      <Link 
+                        key={index} 
+                        to={option.path} 
+                        className="dropdown-item"
+                      >
+                        {option.display}
+                      </Link>
+                    ))}
+                  </div>
+                </li>
+                <li className="nav-item">
+                  <Link to="/testimonials" className="nav-link">Testimonials</Link>
+                </li>
+                <li className="nav-item">
+                  <Link to="/contact" className="nav-link">Contact</Link>
+                </li>
+              </ul>
+            </nav>
+            
+            {/* Desktop Auth Section */}
+            <div className="header-actions">
+              {!isAuthenticated ? (
+                <div className="auth-buttons">
+                  <Link to="/signin" className="btn btn-outline" onClick={handleSignIn}>
+                    Sign In
+                  </Link>
+                  <Link to="/signup" className="btn btn-primary" onClick={handleSignUp}>
+                    Sign Up
+                  </Link>
                 </div>
-              </div>
-            )}
-          </nav>
-          
-          {/* Desktop Auth Buttons/Profile */}
-          {!isAuthenticated ? (
-            <div className="desktop-sign-buttons">
-              <Link to="/signup" className="sign-button" onClick={handleSignUp}>Sign Up</Link>
-              <Link to="/signin" className="sign-button" onClick={handleSignIn}>Sign In</Link>
-            </div>
-          ) : (
-            <div className="profile-dropdown-container">
-              <button 
-                className="profile-icon-btn"
-                onClick={() => setShowProfileDropdown(!showProfileDropdown)}
-              >
-                {user?.avatar ? (
-                  <img src={user.avatar} alt={user.name} className="profile-avatar-img" />
-                ) : (
-                  <div className="profile-avatar-placeholder">
-                    {user?.name?.charAt(0).toUpperCase()}
-                  </div>
-                )}
-                <span className="profile-name">{user?.name}</span>
-              </button>
-              
-              {showProfileDropdown && (
-                <div className="profile-dropdown">
-                  <div className="profile-dropdown-header">
-                    <p className="dropdown-user-name">{user?.name}</p>
-                    <p className="dropdown-user-email">{user?.email}</p>
-                  </div>
-                  <div className="profile-dropdown-menu">
-                    <button onClick={handleMyProfile} className="dropdown-item">
-                      <User size={18} />
-                      My Profile
-                    </button>
-                    <button onClick={handleLogout} className="dropdown-item logout">
-                      <LogOut size={18} />
-                      Logout
-                    </button>
-                  </div>
+              ) : (
+                <div className="profile-dropdown-container">
+                  <button 
+                    className="profile-btn"
+                    onClick={() => setShowProfileDropdown(!showProfileDropdown)}
+                    aria-expanded={showProfileDropdown}
+                  >
+                    <div className="profile-avatar">
+                      {user?.name?.charAt(0).toUpperCase()}
+                    </div>
+                    <span className="profile-name">{user?.name}</span>
+                    <ChevronDown size={16} className={`profile-arrow ${showProfileDropdown ? 'rotate' : ''}`} />
+                  </button>
+                  
+                  {showProfileDropdown && (
+                    <div className="profile-dropdown">
+                      <div className="profile-dropdown-header">
+                        <div className="profile-avatar-large">
+                          {user?.name?.charAt(0).toUpperCase()}
+                        </div>
+                        <div className="profile-info">
+                          <p className="profile-name-text">{user?.name}</p>
+                          <p className="profile-email">{user?.email}</p>
+                        </div>
+                      </div>
+                      <div className="profile-dropdown-menu">
+                        <button onClick={handleMyProfile} className="dropdown-menu-item">
+                          <User size={18} />
+                          My Profile
+                        </button>
+                        <button onClick={handleLogout} className="dropdown-menu-item logout">
+                          <LogOut size={18} />
+                          Logout
+                        </button>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
+              
+              {/* Mobile Menu Button */}
+              <button 
+                className="mobile-menu-btn"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+                aria-expanded={isMenuOpen}
+              >
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+              </button>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && <div className="mobile-overlay" onClick={() => setIsMenuOpen(false)} />}
+      
+      {/* Mobile Navigation */}
+      <nav className={`mobile-nav ${isMenuOpen ? 'active' : ''}`}>
+        <div className="mobile-nav-content">
+          {/* Mobile User Info */}
+          {isAuthenticated && (
+            <div className="mobile-user-card">
+              <div className="mobile-avatar-large">
+                {user?.name?.charAt(0).toUpperCase()}
+              </div>
+              <div className="mobile-user-info">
+                <p className="mobile-user-name">{user?.name}</p>
+                <p className="mobile-user-email">{user?.email}</p>
+              </div>
             </div>
           )}
+          
+          {/* Mobile Nav Links */}
+          <ul className="mobile-nav-list">
+            <li className="mobile-nav-item">
+              <Link to="/" className="mobile-nav-link" onClick={() => handleNavigation('/')}>
+                Home
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link to="/about" className="mobile-nav-link" onClick={() => handleNavigation('/about')}>
+                About
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link to="/guide" className="mobile-nav-link" onClick={() => handleNavigation('/guide')}>
+                Guide
+              </Link>
+            </li>
+            <li className="mobile-nav-item mobile-dropdown">
+              <button 
+                className="mobile-nav-link mobile-dropdown-trigger"
+                onClick={(e) => toggleDropdown(0, e)}
+              >
+                Packages
+                <ChevronDown size={18} className={`mobile-dropdown-icon ${activeDropdown === 0 ? 'rotate' : ''}`} />
+              </button>
+              <div className={`mobile-dropdown-menu ${activeDropdown === 0 ? 'active' : ''}`}>
+                {packageOptions.map((option, index) => (
+                  <Link 
+                    key={index} 
+                    to={option.path} 
+                    className="mobile-dropdown-item"
+                    onClick={() => handleNavigation(option.path)}
+                  >
+                    {option.display}
+                  </Link>
+                ))}
+              </div>
+            </li>
+            <li className="mobile-nav-item">
+              <Link to="/testimonials" className="mobile-nav-link" onClick={() => handleNavigation('/testimonials')}>
+                Testimonials
+              </Link>
+            </li>
+            <li className="mobile-nav-item">
+              <Link to="/contact" className="mobile-nav-link" onClick={() => handleNavigation('/contact')}>
+                Contact
+              </Link>
+            </li>
+          </ul>
+          
+          {/* Mobile Auth Buttons or Profile Actions */}
+          <div className="mobile-auth-section">
+            {!isAuthenticated ? (
+              <div className="mobile-auth-buttons">
+                <Link to="/signin" className="mobile-btn mobile-btn-outline" onClick={handleSignIn}>
+                  Sign In
+                </Link>
+                <Link to="/signup" className="mobile-btn mobile-btn-primary" onClick={handleSignUp}>
+                  Sign Up
+                </Link>
+              </div>
+            ) : (
+              <div className="mobile-profile-actions">
+                <button onClick={handleMyProfile} className="mobile-action-btn profile">
+                  <User size={20} />
+                  My Profile
+                </button>
+                <button onClick={handleLogout} className="mobile-action-btn logout">
+                  <LogOut size={20} />
+                  Logout
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-    </header>
+      </nav>
+    </>
   );
 };
 

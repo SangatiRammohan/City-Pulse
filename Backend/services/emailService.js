@@ -777,10 +777,166 @@ const sendContactFormEmail = async (contactData) => {
   }
 };
 
-// Export all functions
+// Add this function to your existing emailService.js
+
+// Send password reset OTP email
+const sendPasswordResetOTP = async (email, otp, userName) => {
+  try {
+    await sendEmail({
+      to: email,
+      subject: 'Password Reset Code - City Pulse Tours',
+      html: `
+        <!DOCTYPE html>
+        <html>
+        <head>
+          <style>
+            body { 
+              font-family: Arial, sans-serif; 
+              line-height: 1.6; 
+              color: #333; 
+              background: #f5f5f5;
+              padding: 20px;
+            }
+            .container { 
+              max-width: 600px; 
+              margin: 0 auto; 
+              background: white;
+              border-radius: 12px;
+              overflow: hidden;
+              box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            }
+            .header { 
+              background: linear-gradient(135deg, #54a15d, #6fbf73); 
+              color: white; 
+              padding: 40px 30px; 
+              text-align: center; 
+            }
+            .header h1 {
+              margin: 0;
+              font-size: 28px;
+            }
+            .content { 
+              padding: 40px 30px; 
+            }
+            .otp-box {
+              background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+              border: 3px dashed #54a15d;
+              border-radius: 12px;
+              padding: 30px;
+              text-align: center;
+              margin: 30px 0;
+            }
+            .otp-code {
+              font-size: 48px;
+              font-weight: bold;
+              color: #54a15d;
+              letter-spacing: 8px;
+              font-family: 'Courier New', monospace;
+              margin: 10px 0;
+            }
+            .warning-box {
+              background: #fff3cd;
+              border: 1px solid #ffc107;
+              border-radius: 8px;
+              padding: 20px;
+              margin: 25px 0;
+            }
+            .footer { 
+              background: #f8f9fa; 
+              padding: 25px; 
+              text-align: center; 
+              font-size: 12px;
+              color: #666;
+              border-top: 1px solid #e0e0e0;
+            }
+            .timer {
+              background: #e7f5e8;
+              padding: 15px;
+              border-radius: 8px;
+              text-align: center;
+              margin: 20px 0;
+            }
+          </style>
+        </head>
+        <body>
+          <div class="container">
+            <div class="header">
+              <h1>🔐 Password Reset Code</h1>
+              <p style="margin: 10px 0 0 0; font-size: 16px; opacity: 0.95;">
+                City Pulse Tours
+              </p>
+            </div>
+            
+            <div class="content">
+              <h2 style="color: #54a15d; margin-top: 0;">Hello ${userName || 'there'}! 👋</h2>
+              
+              <p style="font-size: 16px; line-height: 1.8;">
+                We received a request to reset your password for your City Pulse Tours account. 
+                Use the verification code below to reset your password:
+              </p>
+              
+              <div class="otp-box">
+                <p style="margin: 0; font-size: 14px; color: #666; text-transform: uppercase; letter-spacing: 1px;">
+                  Your Verification Code
+                </p>
+                <div class="otp-code">${otp}</div>
+                <p style="margin: 10px 0 0 0; font-size: 13px; color: #888;">
+                  Enter this code on the password reset page
+                </p>
+              </div>
+              
+              <div class="timer">
+                <p style="margin: 0; font-size: 15px; color: #54a15d;">
+                  ⏰ This code will expire in <strong>15 minutes</strong>
+                </p>
+              </div>
+              
+              <div class="warning-box">
+                <strong style="color: #856404;">⚠️ Important Security Information:</strong>
+                <ul style="margin: 10px 0; padding-left: 20px; color: #856404;">
+                  <li>This code is valid for <strong>15 minutes only</strong></li>
+                  <li>You can try entering the code up to <strong>5 times</strong></li>
+                  <li>If you didn't request this, please ignore this email</li>
+                  <li>Never share this code with anyone</li>
+                  <li>Our support team will never ask for this code</li>
+                </ul>
+              </div>
+              
+              <p style="font-size: 14px; color: #666; margin-top: 30px;">
+                If you're having trouble, you can request a new code or contact our support team for assistance.
+              </p>
+            </div>
+            
+            <div class="footer">
+              <p style="margin: 0; font-weight: bold; color: #333;">City Pulse Tours</p>
+              <p style="margin: 10px 0;">Your Journey, Our Passion 🌍</p>
+              <p style="margin-top: 20px; color: #999;">
+                📞 +91 8888888888 | 📧 citypulsetours01@gmail.com
+              </p>
+              <p style="margin: 15px 0 0 0; color: #999; font-size: 11px;">
+                This is an automated email. Please do not reply to this message.
+              </p>
+            </div>
+          </div>
+        </body>
+        </html>
+      `
+    });
+
+    console.log('✅ Password reset OTP email sent to:', email);
+    return { success: true };
+
+  } catch (error) {
+    console.error('❌ Error sending password reset OTP email:', error);
+    throw error;
+  }
+};
+
+// Update your module.exports to include the new function
 module.exports = {
   sendEmail,
   sendBookingConfirmation,
   sendContactFormEmail,
-  sendBookingNotificationToCompany
+  sendBookingNotificationToCompany,
+  sendPasswordResetOTP  // ✅ Add this (remove sendPasswordResetEmail if you had it)
 };

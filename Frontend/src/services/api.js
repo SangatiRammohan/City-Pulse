@@ -125,6 +125,46 @@ export const authAPI = {
     }
   },
 
+  // Forgot Password - Send OTP
+  forgotPassword: async (data) => {
+    try {
+      const response = await api.post('/auth/forgot-password', data);
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error;
+    }
+  },
+
+  // Verify OTP
+  verifyOTP: async (data) => {
+    try {
+      const response = await api.post('/auth/verify-otp', data);
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error;
+    }
+  },
+
+  // Reset Password with OTP
+  resetPassword: async (data) => {
+    try {
+      const response = await api.post('/auth/reset-password', data);
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error;
+    }
+  },
+
+  // Resend OTP
+  resendOTP: async (data) => {
+    try {
+      const response = await api.post('/auth/resend-otp', data);
+      return response.data;
+    } catch (error) {
+      throw error.response?.data || error;
+    }
+  },
+
   // Get current user
   getCurrentUser: async () => {
     try {
