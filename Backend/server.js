@@ -7,36 +7,86 @@ const jwt = require('jsonwebtoken');
 // ✅ LOAD .ENV FIRST - BEFORE ANYTHING ELSE
 require('dotenv').config();
 
-// Verify .env loaded
+// Check .env loaded (WARNING instead of ERROR for deployment)
 if (!process.env.EMAIL_USER || !process.env.EMAIL_PASSWORD) {
-  console.error('❌ CRITICAL ERROR: .env file not loaded properly!');
-  console.error('EMAIL_USER:', process.env.EMAIL_USER);
-  console.error('EMAIL_PASSWORD exists:', !!process.env.EMAIL_PASSWORD);
-  console.error('Please check that .env file exists at:', __dirname + '/.env');
-  process.exit(1);
+  console.warn('⚠️  WARNING: Email configuration not found in environment variables');
+  console.warn('⚠️  Email features will be disabled');
+  console.warn('📧 EMAIL_USER:', process.env.EMAIL_USER || 'not set');
+  console.warn('📧 EMAIL_PASSWORD:', process.env.EMAIL_PASSWORD ? 'set' : 'not set');
+  console.warn('ℹ️  Server will continue without email functionality');
+} else {
+  console.log('✅ .env loaded successfully');
+  console.log('📧 EMAIL_USER:', process.env.EMAIL_USER);
+  console.log('📧 EMAIL_PASSWORD length:', process.env.EMAIL_PASSWORD?.length);
 }
 
-console.log('✅ .env loaded successfully');
-console.log('📧 EMAIL_USER:', process.env.EMAIL_USER);
-console.log('📧 EMAIL_PASSWORD length:', process.env.EMAIL_PASSWORD?.length);
+// Flag to check if email is configured
+const EMAIL_CONFIGURED = !!(process.env.EMAIL_USER && process.env.EMAIL_PASSWORD);
 
 // Import services AFTER dotenv is loaded
-const { 
-  sendEmail,
-  sendBookingConfirmation, 
-  sendContactFormEmail,
-  sendBookingNotificationToCompany,
-  sendPasswordResetOTP
-} = require('./services/emailService');
+let sendEmail, sendBookingConfirmation, sendContactFormEmail, sendBookingNotificationToCompany, sendPasswordResetOTP;
+let generateInvoicePDF;
+let subscribeToNewsletter, unsubscribeFromNewsletter, sendNewTripNotification, sendDiscountNotification;
 
-const { generateInvoicePDF } = require('./services/pdfService');
+try {
+  if (EMAIL_CONFIGURED) {
+    const emailService = require('./services/emailService');
+    sendEmail = emailService.sendEmail;
+    sendBookingConfirmation = emailService.sendBookingConfirmation;
+    sendContactFormEmail = emailService.sendContactFormEmail;
+    sendBookingNotificationToCompany = emailService.sendBookingNotificationToCompany;
+    sendPasswordResetOTP = emailService.sendPasswordResetOTP;
+    console.log('✅ Email service loaded');
+  } else {
+    // Create mock email functions
+    sendEmail = async () => { console.log('⚠️  Email not sent - email not configured'); };
+    sendBookingConfirmation = async () => { console.log('⚠️  Booking confirmation not sent - email not configured'); };
+    sendContactFormEmail = async () => { console.log('⚠️  Contact email not sent - email not configured'); };
+    sendBookingNotificationToCompany = async () => { console.log('⚠️  Company notification not sent - email not configured'); };
+    sendPasswordResetOTP = async () => { console.log('⚠️  Password reset OTP not sent - email not configured'); };
+    console.log('⚠️  Email service disabled - using mock functions');
+  }
+} catch (error) {
+  console.error('⚠️  Failed to load email service:', error.message);
+  console.log('ℹ️  Continuing without email functionality');
+  sendEmail = async () => {};
+  sendBookingConfirmation = async () => {};
+  sendContactFormEmail = async () => {};
+  sendBookingNotificationToCompany = async () => {};
+  sendPasswordResetOTP = async () => {};
+}
 
-const { 
-  subscribeToNewsletter, 
-  unsubscribeFromNewsletter,
-  sendNewTripNotification,
-  sendDiscountNotification
-} = require('./services/newsletterService');
+try {
+  const pdfService = require('./services/pdfService');
+  generateInvoicePDF = pdfService.generateInvoicePDF;
+  console.log('✅ PDF service loaded');
+} catch (error) {
+  console.error('⚠️  Failed to load PDF service:', error.message);
+  generateInvoicePDF = async () => Buffer.from('PDF generation not available');
+}
+
+try {
+  if (EMAIL_CONFIGURED) {
+    const newsletterService = require('./services/newsletterService');
+    subscribeToNewsletter = newsletterService.subscribeToNewsletter;
+    unsubscribeFromNewsletter = newsletterService.unsubscribeFromNewsletter;
+    sendNewTripNotification = newsletterService.sendNewTripNotification;
+    sendDiscountNotification = newsletterService.sendDiscountNotification;
+    console.log('✅ Newsletter service loaded');
+  } else {
+    subscribeToNewsletter = async () => ({ success: false, message: 'Email not configured' });
+    unsubscribeFromNewsletter = async () => ({ success: false, message: 'Email not configured' });
+    sendNewTripNotification = async () => {};
+    sendDiscountNotification = async () => {};
+    console.log('⚠️  Newsletter service disabled');
+  }
+} catch (error) {
+  console.error('⚠️  Failed to load newsletter service:', error.message);
+  subscribeToNewsletter = async () => ({ success: false, message: 'Service unavailable' });
+  unsubscribeFromNewsletter = async () => ({ success: false, message: 'Service unavailable' });
+  sendNewTripNotification = async () => {};
+  sendDiscountNotification = async () => {};
+}
 
 // Load models
 const User = require('./models/User');
@@ -48,7 +98,6 @@ const PasswordReset = require('./models/PasswordReset');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key-change-in-production';
-
 
 app.use(cors({
   origin: ['https://city-pulse-01.vercel.app', 'http://localhost:5173'],
@@ -65,7 +114,8 @@ app.get('/api/health', (req, res) => {
     status: 'success',
     message: 'Server is running',
     timestamp: new Date().toISOString(),
-    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected'
+    database: mongoose.connection.readyState === 1 ? 'connected' : 'disconnected',
+    emailConfigured: EMAIL_CONFIGURED
   });
 });
 
@@ -73,7 +123,8 @@ app.get('/api/health', (req, res) => {
 const MONGODB_URI = process.env.MONGODB_URI;
 
 if (!MONGODB_URI) {
-  console.error('❌ MONGODB_URI is not defined in .env file');
+  console.error('❌ MONGODB_URI is not defined in environment variables');
+  console.error('ℹ️  Please add MONGODB_URI to your environment variables on Render');
   process.exit(1);
 }
 
@@ -386,13 +437,17 @@ app.post('/api/auth/forgot-password', async (req, res) => {
 
     console.log('✅ OTP generated for user:', user.email, 'OTP:', otp);
 
-    // Send email with OTP
-    try {
-      await sendPasswordResetOTP(user.email, otp, user.name);
-      console.log('✅ Password reset OTP email sent');
-    } catch (emailError) {
-      console.error('⚠️ Email sending failed:', emailError.message);
-      // Continue anyway - OTP is saved in database
+    // Send email with OTP (only if email is configured)
+    if (EMAIL_CONFIGURED) {
+      try {
+        await sendPasswordResetOTP(user.email, otp, user.name);
+        console.log('✅ Password reset OTP email sent');
+      } catch (emailError) {
+        console.error('⚠️ Email sending failed:', emailError.message);
+        // Continue anyway - OTP is saved in database
+      }
+    } else {
+      console.log('⚠️ Email not configured - OTP saved but not sent:', otp);
     }
 
     res.status(200).json({
@@ -628,12 +683,16 @@ app.post('/api/auth/resend-otp', async (req, res) => {
 
     console.log('✅ New OTP generated:', otp);
 
-    // Send email
-    try {
-      await sendPasswordResetOTP(user.email, otp, user.name);
-      console.log('✅ New OTP email sent');
-    } catch (emailError) {
-      console.error('⚠️ Email sending failed:', emailError.message);
+    // Send email (only if configured)
+    if (EMAIL_CONFIGURED) {
+      try {
+        await sendPasswordResetOTP(user.email, otp, user.name);
+        console.log('✅ New OTP email sent');
+      } catch (emailError) {
+        console.error('⚠️ Email sending failed:', emailError.message);
+      }
+    } else {
+      console.log('⚠️ Email not configured - OTP saved but not sent:', otp);
     }
 
     res.status(200).json({
@@ -728,7 +787,7 @@ app.post('/api/bookings/create', async (req, res) => {
 
     const emailPromises = [];
 
-    if (pdfBuffer) {
+    if (pdfBuffer && EMAIL_CONFIGURED) {
       emailPromises.push(
         sendBookingConfirmation(booking, pdfBuffer)
           .then(() => {
@@ -738,27 +797,33 @@ app.post('/api/bookings/create', async (req, res) => {
             console.error('⚠️ Customer email failed:', err.message);
           })
       );
+
+      emailPromises.push(
+        sendBookingNotificationToCompany(booking)
+          .then(() => {
+            console.log('✅ Company notification email sent');
+          })
+          .catch(err => {
+            console.error('⚠️ Company email failed:', err.message);
+          })
+      );
+    } else {
+      console.log('⚠️ Email not configured - skipping email notifications');
     }
 
-    emailPromises.push(
-      sendBookingNotificationToCompany(booking)
-        .then(() => {
-          console.log('✅ Company notification email sent');
-        })
-        .catch(err => {
-          console.error('⚠️ Company email failed:', err.message);
-        })
-    );
+    if (emailPromises.length > 0) {
+      await Promise.allSettled(emailPromises);
+    }
 
-    await Promise.allSettled(emailPromises);
-
-    booking.invoiceSent = true;
-    booking.invoiceSentAt = new Date();
+    booking.invoiceSent = EMAIL_CONFIGURED;
+    booking.invoiceSentAt = EMAIL_CONFIGURED ? new Date() : null;
     await booking.save();
 
     res.status(201).json({
       status: 'success',
-      message: 'Booking created successfully. Invoice sent to your email!',
+      message: EMAIL_CONFIGURED 
+        ? 'Booking created successfully. Invoice sent to your email!' 
+        : 'Booking created successfully!',
       data: booking.maskSensitiveData(),
       bookingId: booking.bookingId,
       packageName: booking.packageName,
@@ -910,6 +975,13 @@ app.get('/api/bookings/download-invoice/:bookingId', async (req, res) => {
 
 app.post('/api/bookings/resend-invoice/:bookingId', async (req, res) => {
   try {
+    if (!EMAIL_CONFIGURED) {
+      return res.status(503).json({
+        status: 'error',
+        message: 'Email service is not configured. Cannot send invoice.'
+      });
+    }
+
     const booking = await Booking.findOne({ bookingId: req.params.bookingId });
     
     if (!booking) {
@@ -961,17 +1033,19 @@ app.get('/api/bookings/invoice/:bookingId', async (req, res) => {
 
     const pdfBuffer = await generateInvoicePDF(booking);
 
-    try {
-      console.log('📧 Sending invoice email to:', booking.userDetails?.email);
-      await sendBookingConfirmation(booking, pdfBuffer);
-      
-      booking.invoiceSent = true;
-      booking.invoiceSentAt = new Date();
-      await booking.save();
-      
-      console.log('✅ Invoice email sent successfully!');
-    } catch (emailError) {
-      console.error('⚠️ Email sending failed:', emailError.message);
+    if (EMAIL_CONFIGURED) {
+      try {
+        console.log('📧 Sending invoice email to:', booking.userDetails?.email);
+        await sendBookingConfirmation(booking, pdfBuffer);
+        
+        booking.invoiceSent = true;
+        booking.invoiceSentAt = new Date();
+        await booking.save();
+        
+        console.log('✅ Invoice email sent successfully!');
+      } catch (emailError) {
+        console.error('⚠️ Email sending failed:', emailError.message);
+      }
     }
 
     res.setHeader('Content-Type', 'application/pdf');
@@ -1120,6 +1194,13 @@ app.get('/api/newsletter/stats', async (req, res) => {
 
 app.post('/api/newsletter/notify-new-trip', async (req, res) => {
   try {
+    if (!EMAIL_CONFIGURED) {
+      return res.status(503).json({
+        status: 'error',
+        message: 'Email service is not configured'
+      });
+    }
+
     const tripDetails = req.body;
 
     await sendNewTripNotification(tripDetails);
@@ -1142,6 +1223,13 @@ app.post('/api/newsletter/notify-new-trip', async (req, res) => {
 
 app.post('/api/newsletter/notify-discount', async (req, res) => {
   try {
+    if (!EMAIL_CONFIGURED) {
+      return res.status(503).json({
+        status: 'error',
+        message: 'Email service is not configured'
+      });
+    }
+
     const discountDetails = req.body;
 
     await sendDiscountNotification(discountDetails);
@@ -1201,11 +1289,15 @@ app.post('/api/contact/submit', async (req, res) => {
 
     console.log('✅ Contact form saved to database:', contact._id);
 
-    try {
-      await sendContactFormEmail({ name, email, phone, message });
-      console.log('✅ Contact emails sent successfully');
-    } catch (emailError) {
-      console.error('⚠️ Email sending failed:', emailError.message);
+    if (EMAIL_CONFIGURED) {
+      try {
+        await sendContactFormEmail({ name, email, phone, message });
+        console.log('✅ Contact emails sent successfully');
+      } catch (emailError) {
+        console.error('⚠️ Email sending failed:', emailError.message);
+      }
+    } else {
+      console.log('⚠️ Email not configured - contact saved but email not sent');
     }
 
     res.status(201).json({
@@ -1307,6 +1399,13 @@ app.patch('/api/contact/:id/mark-read', async (req, res) => {
 
 app.get('/api/test-email', async (req, res) => {
   try {
+    if (!EMAIL_CONFIGURED) {
+      return res.status(503).json({
+        status: 'error',
+        message: 'Email service is not configured. Please add EMAIL_USER and EMAIL_PASSWORD environment variables.'
+      });
+    }
+
     await sendEmail({
       to: 'sangatirammohan01@gmail.com',
       subject: 'City Pulse Tours - Test Email',
@@ -1334,6 +1433,13 @@ app.get('/api/test-email', async (req, res) => {
 });
 
 app.get('/api/test-smtp', async (req, res) => {
+  if (!EMAIL_CONFIGURED) {
+    return res.status(503).json({
+      success: false,
+      message: 'Email service is not configured. Please add EMAIL_USER and EMAIL_PASSWORD environment variables.'
+    });
+  }
+
   const nodemailer = require('nodemailer');
   
   console.log('🔍 Testing SMTP connection...');
@@ -1396,7 +1502,7 @@ app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
   console.log(`📡 API available at http://localhost:${PORT}/api`);
   console.log(`💚 Health check: http://localhost:${PORT}/api/health`);
-  console.log(`📧 Email configured: ${process.env.EMAIL_USER || 'Not configured'}`);
+  console.log(`📧 Email configured: ${EMAIL_CONFIGURED ? process.env.EMAIL_USER : 'Not configured (email features disabled)'}`);
   console.log(`🌍 Environment: ${process.env.NODE_ENV || 'development'}`);
 });
 
