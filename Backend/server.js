@@ -1489,6 +1489,17 @@ app.use((err, req, res, next) => {
   });
 });
 
+// ROOT ROUTE (FIX)
+app.get('/', (req, res) => {
+  res.status(200).json({
+    status: 'success',
+    message: 'City Pulse Backend is running 🚀',
+    apiBase: '/api',
+    healthCheck: '/api/health'
+  });
+});
+
+
 // 404 handler
 app.use((req, res) => {
   res.status(404).json({
