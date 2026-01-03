@@ -1,0 +1,501 @@
+
+
+{
+    "beach_tours_india": {
+      "title": "Beach Tours in India",
+      "subtitle": "Discover the pristine coastlines and tropical paradises along India's magnificent shorelines",
+      "bannerImage": "/BeachTours/b2.png",
+      "description": "Experience the sun, sand, and sea with our carefully curated beach tours across India's stunning coastlines. From the party beaches of Goa to the serene shores of Andaman, pristine beaches of Kerala to the scenic coasts of Maharashtra, our packages offer the perfect blend of relaxation, adventure, and cultural experiences for beach lovers.",
+      "duration": "4-8 days",
+      "price": "Starting from ₹15,000 per person",
+      "inclusions": [
+        "Accommodation in beachfront resorts and hotels",
+        "Daily breakfast and select meals",
+        "Private air-conditioned transfers",
+        "Professional English-speaking guide",
+        "All sightseeing and entrance fees",
+        "Welcome coconut water on arrival",
+        "One water sports activity per destination",
+        "Beach equipment (umbrellas, towels, mats)",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival at Beach Destination",
+          "description": "Arrive at your chosen beach paradise. Check into your beachfront accommodation and spend the evening strolling along the shoreline, enjoying the sunset and a welcome dinner featuring local seafood specialties."
+        },
+        {
+          "day": 2,
+          "title": "Beach Exploration & Water Sports",
+          "description": "Full day enjoying the beach and trying various water sports like parasailing, jet skiing, or banana boat rides. Visit nearby beaches and scenic coastal spots. Evening leisure time to enjoy the beach atmosphere."
+        },
+        {
+          "day": 3,
+          "title": "Island Excursion",
+          "description": "Day trip to a nearby island or beach destination. Enjoy snorkeling, swimming, and beach picnic. Experience local marine life and coral reefs where available. Evening cultural show with regional dance and music."
+        },
+        {
+          "day": 4,
+          "title": "Coastal Heritage",
+          "description": "Visit coastal forts, temples, lighthouses, or colonial structures. Experience local fishing villages and markets. Evening cruise or boat ride to witness magnificent sunset views over the ocean."
+        },
+        {
+          "day": 5,
+          "title": "Coastal Cuisine",
+          "description": "Culinary experience focusing on local seafood and coastal delicacies. Cooking demonstration and hands-on class. Afternoon leisure time for beach relaxation or optional spa treatments."
+        },
+        {
+          "day": 6,
+          "title": "Adventure Day",
+          "description": "Engage in more adventurous beach activities like scuba diving, surfing, or deep-sea fishing based on location. Evening bonfire on the beach with local entertainment."
+        },
+        {
+          "day": 7,
+          "title": "Departure",
+          "description": "Morning leisure time for last beach walks or souvenir shopping. After breakfast, check-out and transfer to airport/railway station for your onward journey, taking back memories of your beach holiday."
+        }
+      ],
+      "highlights": [
+        "Stay in premium beachfront accommodations with stunning ocean views",
+        "Experience thrilling water sports and marine adventures",
+        "Explore hidden beaches and secluded coastal gems",
+        "Indulge in fresh seafood and authentic coastal cuisines",
+        "Witness breathtaking sunrises and sunsets over the ocean",
+        "Discover unique coastal cultures and traditions",
+        "Enjoy personalized experiences for couples, families, and groups"
+      ],
+      "accommodations": [
+        {
+          "name": "Seaside Resort & Spa",
+          "description": "Luxury beachfront property with private beach access, infinity pools overlooking the ocean, water sports facilities, and restaurants serving fresh seafood caught daily."
+        },
+        {
+          "name": "Palm Beach Cottages",
+          "description": "Charming beach cottages set amidst palm groves, offering rustic luxury, private verandas, beach hammocks, and authentic coastal dining experiences."
+        },
+        {
+          "name": "Ocean View Hotel",
+          "description": "Contemporary property with panoramic sea views, modern amenities, rooftop infinity pool, multi-cuisine restaurants, and direct beach access."
+        },
+        {
+          "name": "Coastal Eco Resort",
+          "description": "Sustainable accommodation built with local materials, featuring eco-friendly practices, organic gardens, and traditional architecture blending with coastal landscapes."
+        }
+      ],
+      "gallery": [
+        "/images/goa-calangute-beach.jpg",
+        "/images/andaman-radhanagar-beach.jpg",
+        "/images/kerala-varkala-beach.jpg",
+        "/images/maharashtra-tarkarli-beach.jpg",
+        "/images/tamil-nadu-kovalam-beach.jpg",
+        "/images/odisha-puri-beach.jpg",
+        "/images/goa-water-sports.jpg",
+        "/images/andaman-scuba-diving.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "Goa Beach Extravaganza",
+          "image": "/BeachTours/b1.png",
+          "description": "Experience the vibrant beach culture of India's most famous coastal destination. This package covers North and South Goa beaches, offering a perfect mix of relaxation, nightlife, water sports, and Portuguese heritage exploration.",
+          "duration": "5 days",
+          "charge": 16000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival at Dabolim Airport and transfer to North Goa hotel",
+                "Welcome drink and beach orientation",
+                "Evening at Baga Beach with sunset views",
+                "Dinner at popular beach shack with live music"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Water sports at Calangute Beach (parasailing, jet skiing, banana boat)",
+                "Visit to Anjuna Flea Market (Wednesdays only) or Mapusa Market",
+                "Afternoon at Vagator Beach and Chapora Fort",
+                "Evening pub crawl in Baga-Calangute strip"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Old Goa heritage tour (Basilica of Bom Jesus, Se Cathedral)",
+                "Visit to Shri Mangueshi Temple",
+                "Spice plantation tour with traditional Goan lunch",
+                "Evening Sunset Cruise on Mandovi River with cultural show"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Transfer to South Goa resort",
+                "Visit to Colva and Benaulim Beaches",
+                "Dolphin spotting boat trip",
+                "Afternoon at Palolem Beach",
+                "Seafood cooking class and dinner"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Morning yoga session on the beach",
+                "Visit to Butterfly Beach (accessible by boat)",
+                "Shopping for souvenirs and Goan specialties",
+                "Departure from Goa"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kerala Coastal Serenity",
+          "image": "/BeachTours/b3.png",
+          "description": "Discover the tranquil beaches of God's Own Country. This package covers the scenic beaches of Kovalam, Varkala, and Marari, combined with backwater experiences, offering a peaceful retreat with Ayurvedic therapies and cultural insights.",
+          "duration": "6 days",
+          "charge": 22000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival at Trivandrum airport and transfer to Kovalam",
+                "Check-in at beach resort",
+                "Evening stroll at Lighthouse Beach",
+                "Welcome dinner with Kerala seafood specialties"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning sunrise yoga session",
+                "Ayurvedic consultation and introductory treatment",
+                "Beach hopping to Hawa Beach and Samudra Beach",
+                "Sunset catamaran ride with local fishermen"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Transfer to Varkala (2 hours drive)",
+                "Check-in at cliff-top resort",
+                "Visit to Varkala Beach and Papanasam Beach",
+                "Evening visit to Janardanaswamy Temple",
+                "Dinner at cliff-top restaurant with ocean views"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Morning nature walk along Varkala cliff",
+                "Visit to Kappil Beach and Lake",
+                "Traditional Kalaripayattu martial art demonstration",
+                "Ayurvedic massage and wellness session"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Transfer to Marari Beach (3 hours drive)",
+                "Check-in at beach resort",
+                "Visit to local fishing village",
+                "Coir making demonstration",
+                "Cooking class featuring Kerala fish curry"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning at leisure on Marari Beach",
+                "Short backwater cruise near Alleppey",
+                "Shopping for local handicrafts",
+                "Departure to Cochin airport"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Andaman Island Bliss",
+          "image": "/BeachTours/b4.png",
+          "description": "Explore the pristine beaches and crystal-clear waters of the Andaman Islands. This package covers Port Blair, Havelock, and Neil Island, offering world-class beaches, coral reefs, and marine adventures in this tropical paradise.",
+          "duration": "7 days",
+          "charge": 32000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival at Port Blair and hotel check-in",
+                "Visit Cellular Jail and Light & Sound show",
+                "Evening at Corbyn's Cove Beach",
+                "Welcome dinner with Andaman specialties"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Anthropological Museum",
+                "Ferry to Havelock Island (2 hours)",
+                "Check-in at beach resort",
+                "Evening at Radhanagar Beach (Asia's Best Beach)"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Snorkeling excursion to Elephant Beach",
+                "Coral reef exploration with marine biologist",
+                "Beach picnic lunch",
+                "Sunset kayaking through mangroves"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Scuba diving session for beginners at Nemo Reef",
+                "Visit to Kalapathar Beach",
+                "Free time for beach relaxation",
+                "Beachside bonfire with barbecue dinner"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Ferry to Neil Island (1 hour)",
+                "Check-in at eco-resort",
+                "Visit to Bharatpur and Laxmanpur Beaches",
+                "Sunset view at Natural Bridge"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Glass-bottom boat ride over coral reefs",
+                "Bicycle tour of Neil Island",
+                "Beach hopping and swimming",
+                "Transfer back to Port Blair"
+              ]
+            },
+            {
+              "day": 7,
+              "activities": [
+                "Morning visit to Ross Island and North Bay",
+                "Souvenir shopping at Aberdeen Bazaar",
+                "Farewell lunch with seafood specialties",
+                "Departure from Port Blair"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Konkan Coast Explorer",
+          "image": "/BeachTours/b5.png",
+          "description": "Discover the unspoiled beaches of Maharashtra's Konkan coast. This package covers Alibaug, Murud, Kashid, and Tarkarli, offering pristine beaches, historic sea forts, authentic Malvani cuisine, and tranquil coastal experiences away from the crowds.",
+          "duration": "6 days",
+          "charge": 18000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Departure from Mumbai to Alibaug (ferry or road)",
+                "Check-in at beach resort",
+                "Visit to Alibaug Beach and orientation walk",
+                "Evening visit to Kolaba Fort during low tide",
+                "Welcome dinner with Konkan specialties"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Kashid Beach",
+                "Picnic lunch at beach",
+                "Water sports activities",
+                "Evening leisure time",
+                "Seafood barbecue dinner"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Transfer to Murud",
+                "Visit to Murud Beach",
+                "Boat ride to Janjira Fort",
+                "Exploration of local fishing village",
+                "Cooking demonstration of Malvani cuisine"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Transfer to Harihareshwar",
+                "Temple visit and beach time",
+                "Coastal hike to nearby viewpoints",
+                "Fresh catch seafood experience",
+                "Evening cultural program"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Transfer to Tarkarli/Malvan area",
+                "Check-in at beach stay",
+                "Visit to Tarkarli and Devbag beaches",
+                "Backwater boat ride to Tsunami Island",
+                "Visit to Sindhudurg Fort"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning snorkeling or scuba diving experience",
+                "Visit to Malvan market for spices and souvenirs",
+                "Farewell lunch with local delicacies",
+                "Departure to Mumbai/Goa"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "East Coast Odyssey",
+          "image": "/BeachTours/b6.png",
+          "description": "Explore the diverse beaches of India's East Coast. This package covers the beaches of Odisha, Pondicherry, and Tamil Nadu, offering a mix of spiritual experiences, French colonial charm, and pristine shorelines with unique cultural insights.",
+          "duration": "8 days",
+          "charge": 26000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival at Bhubaneswar and transfer to Puri",
+                "Check-in at beach hotel",
+                "Evening visit to Jagannath Temple (exterior for non-Hindus)",
+                "Sunset at Puri Beach",
+                "Welcome dinner with Odia specialties"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning rituals and sunrise at beach",
+                "Visit to Raghurajpur crafts village",
+                "Konark Sun Temple exploration",
+                "Evening at Chandrabhaga Beach"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Transfer to Gopalpur-on-Sea",
+                "Beach relaxation and water activities",
+                "Visit to Chilika Lake (seasonal)",
+                "Fresh seafood experience at local restaurant"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Flight to Chennai and transfer to Mahabalipuram",
+                "Check-in at beach resort",
+                "Visit to Shore Temple and Five Rathas",
+                "Evening at Mahabalipuram Beach"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Transfer to Pondicherry (2 hours)",
+                "Check-in at heritage hotel",
+                "French Quarter walking tour",
+                "Visit to Aurobindo Ashram",
+                "Evening at Promenade Beach and Rock Beach"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning visit to Auroville",
+                "Paradise Beach excursion by boat",
+                "French and Tamil fusion cooking class",
+                "Evening cycling tour along the promenade"
+              ]
+            },
+            {
+              "day": 7,
+              "activities": [
+                "Transfer to Kovalam (Tamil Nadu)",
+                "Beach relaxation and swimming",
+                "Visit to Chothavilai Beach",
+                "Traditional Tamil folk performance"
+              ]
+            },
+            {
+              "day": 8,
+              "activities": [
+                "Morning yoga session on the beach",
+                "Last-minute shopping for souvenirs",
+                "Farewell lunch with South Indian seafood",
+                "Departure from Trivandrum"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Gujarat Coastal Heritage",
+          "image": "/BeachTours/b7.png",
+          "description": "Discover the hidden beaches and coastal heritage of Gujarat. This package covers Diu, Somnath, and Dwarka, offering a unique blend of Portuguese colonial history, pilgrimage sites, pristine beaches, and rich maritime heritage.",
+          "duration": "5 days",
+          "charge": 19000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival at Diu (flight or road from Ahmedabad)",
+                "Check-in at beach resort",
+                "Visit to Diu Fort and St. Paul's Church",
+                "Evening at Nagoa Beach",
+                "Welcome dinner with Portuguese-influenced cuisine"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning at Ghogla Beach",
+                "Water sports activities",
+                "Visit to Naida Caves and Diu Museum",
+                "Sunset at Jallandhar Beach",
+                "Seafood dinner at local restaurant"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Transfer to Somnath",
+                "Visit to Somnath Temple",
+                "Beach time at Somnath Beach",
+                "Sound and Light show at temple complex",
+                "Traditional Gujarati thali dinner"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Transfer to Dwarka",
+                "Visit to Dwarkadheesh Temple",
+                "Rukmini Temple exploration",
+                "Evening Aarti ceremony at Gomti Ghat",
+                "Sunset boat ride"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Morning visit to Beyt Dwarka by ferry",
+                "Beach time and temple visits",
+                "Shopping for seashell crafts and souvenirs",
+                "Farewell lunch",
+                "Departure to Jamnagar/Rajkot"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

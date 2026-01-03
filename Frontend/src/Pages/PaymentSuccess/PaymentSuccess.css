@@ -1,0 +1,465 @@
+/* PaymentSuccess.css - Complete Modern Design */
+
+.payment-success-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f5e9 0%, #f1f8e9 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.success-card {
+  background: white;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  width: 100%;
+  padding: 3rem 2.5rem;
+  animation: slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.success-icon-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.success-icon {
+  width: 120px;
+  height: 120px;
+  background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #54a15d;
+  animation: iconPop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+
+@keyframes iconPop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.success-title {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2e7d32;
+  text-align: center;
+  margin: 0 0 0.5rem;
+}
+
+.success-subtitle {
+  font-size: 1.125rem;
+  color: #666;
+  text-align: center;
+  margin: 0 0 2rem;
+}
+
+.booking-summary {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.summary-header h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+.booking-id-badge {
+  background: linear-gradient(135deg, #54a15d, #6fbf73);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.booking-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #666;
+  font-size: 0.9375rem;
+}
+
+.detail-value {
+  font-weight: 500;
+  color: #333;
+  text-align: right;
+  font-size: 0.9375rem;
+}
+
+.total-row {
+  margin-top: 1rem;
+  padding-top: 1.5rem;
+  border-top: 2px solid #54a15d !important;
+  border-bottom: none !important;
+}
+
+.total-amount {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #54a15d;
+}
+
+.guide-info {
+  background: #fff3e0;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.guide-info h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #e65100;
+  margin: 0 0 1rem;
+}
+
+.guide-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.guide-details .detail-row {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #ffe0b2;
+}
+
+.guide-details .detail-row:last-child {
+  border-bottom: none;
+}
+
+.confirmation-message {
+  background: #e3f2fd;
+  border-left: 4px solid #2196f3;
+  border-radius: 8px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  color: #1565c0;
+}
+
+.confirmation-message svg {
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.confirmation-message p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.confirmation-message strong {
+  font-weight: 700;
+}
+
+.success-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.download-invoice-btn,
+.resend-email-btn,
+.back-to-home-btn {
+  flex: 1;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.download-invoice-btn {
+  background: linear-gradient(135deg, #54a15d, #6fbf73);
+  color: white;
+  box-shadow: 0 4px 15px rgba(84, 161, 93, 0.3);
+}
+
+.download-invoice-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(84, 161, 93, 0.4);
+}
+
+.download-invoice-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.resend-email-btn {
+  background: linear-gradient(135deg, #2196f3, #42a5f5);
+  color: white;
+  box-shadow: 0 4px 15px rgba(33, 150, 243, 0.3);
+}
+
+.resend-email-btn:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(33, 150, 243, 0.4);
+}
+
+.resend-email-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.back-to-home-btn {
+  background: white;
+  color: #54a15d;
+  border: 2px solid #54a15d;
+}
+
+.back-to-home-btn:hover {
+  background: #f1f8f4;
+  transform: translateY(-2px);
+}
+
+.thank-you-message {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.thank-you-message p {
+  margin: 0.5rem 0;
+  color: #666;
+}
+
+.thank-you-message p:first-child {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #333;
+}
+
+.small-text {
+  font-size: 0.875rem;
+  color: #999;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .payment-success-container {
+    padding: 1.5rem 1rem;
+  }
+
+  .success-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .success-title {
+    font-size: 1.75rem;
+  }
+
+  .success-subtitle {
+    font-size: 1rem;
+  }
+
+  .booking-summary {
+    padding: 1.5rem;
+  }
+
+  .summary-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .detail-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .detail-value {
+    text-align: left;
+  }
+
+  .success-actions {
+    flex-direction: column;
+  }
+
+  .download-invoice-btn,
+  .resend-email-btn,
+  .back-to-home-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .success-card {
+    padding: 1.5rem 1.25rem;
+    border-radius: 20px;
+  }
+
+  .success-icon {
+    width: 100px;
+    height: 100px;
+  }
+
+  .success-icon svg {
+    width: 60px;
+    height: 60px;
+  }
+
+  .success-title {
+    font-size: 1.5rem;
+  }
+
+  .booking-summary {
+    padding: 1.25rem;
+  }
+
+  .summary-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .booking-id-badge {
+    font-size: 0.8125rem;
+    padding: 0.375rem 0.875rem;
+  }
+
+  .detail-label,
+  .detail-value {
+    font-size: 0.875rem;
+  }
+
+  .total-amount {
+    font-size: 1.25rem;
+  }
+
+  .confirmation-message {
+    padding: 1rem 1.25rem;
+  }
+
+  .download-invoice-btn,
+  .resend-email-btn,
+  .back-to-home-btn {
+    padding: 0.875rem 1.25rem;
+    font-size: 0.9375rem;
+  }
+}
+
+/* Loading state */
+.download-invoice-btn:disabled,
+.resend-email-btn:disabled {
+  position: relative;
+}
+
+.download-invoice-btn:disabled::after,
+.resend-email-btn:disabled::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 0.6s linear infinite;
+  margin-left: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Print styles */
+@media print {
+  .payment-success-container {
+    background: white;
+    padding: 0;
+  }
+
+  .success-actions,
+  .back-to-home-btn,
+  .download-invoice-btn,
+  .resend-email-btn {
+    display: none !important;
+  }
+
+  .success-card {
+    box-shadow: none;
+    padding: 2rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .download-invoice-btn,
+  .resend-email-btn,
+  .back-to-home-btn {
+    border: 2px solid currentColor;
+  }
+}

@@ -1,0 +1,315 @@
+{
+    "golden_triangle_tours": {
+      "title": "Golden Triangle Tours",
+      "subtitle": "Discover the cultural heritage of India through Delhi, Agra, and Jaipur",
+      "bannerImage": "/GoldenTours/G1.png",
+      "description": "Experience India's rich history and vibrant culture with our Golden Triangle tour packages. This classic circuit connects Delhi, Agra, and Jaipur, offering a perfect introduction to India's magnificent monuments, royal heritage, bustling markets, and diverse culinary delights.",
+      "duration": "4-6 days",
+      "price": "Starting from ₹22,000 per person",
+      "inclusions": [
+        "Accommodation in 4-star or 5-star hotels",
+        "Daily breakfast and select meals",
+        "Private air-conditioned vehicle with driver",
+        "Professional English-speaking guide",
+        "Monument entrance fees",
+        "Welcome dinner with cultural performance",
+        "Elephant/jeep ride at Amber Fort (Jaipur)",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival in Delhi",
+          "description": "Arrive in Delhi, India's capital. Check into your hotel and spend the evening at leisure, perhaps exploring nearby markets or enjoying a welcome dinner featuring North Indian cuisine."
+        },
+        {
+          "day": 2,
+          "title": "Delhi Sightseeing",
+          "description": "Full day exploring Old and New Delhi. Visit Jama Masjid, enjoy a rickshaw ride through Chandni Chowk, see India Gate, Qutub Minar, and Humayun's Tomb. Experience the colonial grandeur of Lutyens' Delhi."
+        },
+        {
+          "day": 3,
+          "title": "Delhi to Agra",
+          "description": "Drive to Agra (4 hours). Visit the magnificent Taj Mahal at sunset. Explore Agra Fort, a UNESCO World Heritage site, and enjoy local Mughlai cuisine for dinner."
+        },
+        {
+          "day": 4,
+          "title": "Agra to Jaipur via Fatehpur Sikri",
+          "description": "Optional sunrise visit to Taj Mahal. Drive to Jaipur (5-6 hours) with a stop at Fatehpur Sikri, the abandoned Mughal city. Evening arrival in Jaipur with free time to explore the Pink City."
+        },
+        {
+          "day": 5,
+          "title": "Jaipur Exploration",
+          "description": "Full day exploring Jaipur. Visit Amber Fort with elephant/jeep ride, City Palace, Jantar Mantar observatory, and Hawa Mahal. Evening shopping at local bazaars for textiles, jewelry, and handicrafts."
+        },
+        {
+          "day": 6,
+          "title": "Departure from Jaipur",
+          "description": "After breakfast, transfer to Jaipur airport/railway station for departure, or extend your stay with additional destinations."
+        }
+      ],
+      "highlights": [
+        "Visit the iconic Taj Mahal, one of the Seven Wonders of the World",
+        "Explore UNESCO World Heritage sites in all three cities",
+        "Experience the contrast between Old and New Delhi",
+        "Discover the royal heritage of Rajasthan in Jaipur",
+        "Shop at vibrant markets for traditional handicrafts",
+        "Enjoy authentic regional cuisine from different parts of North India",
+        "Learn about India's diverse architectural styles spanning centuries"
+      ],
+      "accommodations": [
+        {
+          "name": "Delhi Heritage Hotel",
+          "description": "Colonial-style luxury hotel in central Delhi with modern amenities, multiple dining options, and elegant decor reflecting India's rich heritage."
+        },
+        {
+          "name": "Agra Taj View Hotel",
+          "description": "Premium accommodation with views of the Taj Mahal, featuring Mughal-inspired architecture, spa facilities, and rooftop dining."
+        },
+        {
+          "name": "Jaipur Palace Resort",
+          "description": "Restored heritage property with Rajasthani decor, traditional hospitality, courtyard dining, and cultural performances."
+        },
+        {
+          "name": "Luxury Haveli Stay",
+          "description": "Boutique accommodation in restored traditional mansions offering authentic experiences with modern comforts across all three cities."
+        }
+      ],
+      "gallery": [
+        "/images/taj-mahal.jpg",
+        "/images/amber-fort.jpg",
+        "/images/humayuns-tomb.jpg",
+        "/images/hawa-mahal.jpg",
+        "/images/india-gate.jpg",
+        "/images/fatehpur-sikri.jpg",
+        "/images/delhi-market.jpg",
+        "/images/jaipur-street.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "Classic Golden Triangle",
+          "image":"/GoldenTours/G2.png",
+          "description": "The perfect introduction to India's rich cultural heritage, covering the essential highlights of Delhi, Agra, and Jaipur. Visit iconic monuments, experience diverse cuisines, and discover the perfect blend of ancient and modern India.",
+          "duration": "4 days",
+          "charge": 22000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Delhi and hotel check-in",
+                "Visit India Gate and Rajpath",
+                "Explore Qutub Minar complex",
+                "Welcome dinner with cultural performance"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Early morning drive to Agra (4 hours)",
+                "Visit the magnificent Taj Mahal",
+                "Explore Agra Fort and its palaces",
+                "Optional visit to marble inlay workshop",
+                "Overnight in Agra"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Drive to Jaipur via Fatehpur Sikri",
+                "Explore the abandoned Mughal city",
+                "Evening arrival in Jaipur",
+                "Visit local market and enjoy Rajasthani dinner"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Morning visit to Amber Fort with elephant ride",
+                "Photo stop at Hawa Mahal (Palace of Winds)",
+                "Visit City Palace and Jantar Mantar observatory",
+                "Departure from Jaipur"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Golden Triangle with Spiritual Touch",
+          "image": "/GoldenTours/G3.png",
+          "description": "Experience the Golden Triangle with an emphasis on India's spiritual heritage. Visit ancient temples, participate in traditional rituals, and explore the spiritual dimensions of India's most iconic monuments.",
+          "duration": "5 days",
+          "charge": 25000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Delhi and hotel check-in",
+                "Visit Akshardham Temple complex",
+                "Evening Ganga Aarti ceremony at Birla Temple",
+                "Dinner with spiritual discourse"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Jama Masjid and Gurudwara Bangla Sahib",
+                "Afternoon drive to Agra",
+                "Evening meditation session near Taj Mahal gardens",
+                "Overnight in Agra"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Sunrise visit to Taj Mahal",
+                "Drive to Jaipur with stop at Abhaneri Stepwell",
+                "Visit Galtaji Temple (Monkey Temple)",
+                "Evening spiritual music performance"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Morning yoga session at hotel",
+                "Visit Amber Fort and Jaigarh Fort",
+                "Afternoon visit to Govind Dev Ji Temple during aarti",
+                "Traditional vegetarian Rajasthani dinner"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Morning visit to Birla Temple and Ganesha Temple",
+                "Spiritual shopping for religious artifacts",
+                "Blessing ceremony with local priest",
+                "Departure from Jaipur"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Golden Triangle with Luxury Experience",
+          "image":"/GoldenTours/G4.png",
+          "description": "Experience the Golden Triangle in ultimate luxury. Stay in palace hotels, enjoy private guided tours, exclusive dining experiences, and unique cultural interactions while exploring India's most iconic cities.",
+          "duration": "6 days",
+          "charge": 45000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "VIP arrival assistance at Delhi airport",
+                "Check-in at luxury heritage hotel",
+                "Private tour of Lutyens' Delhi",
+                "Exclusive dinner with royal Indian family descendants"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Private tour of Old Delhi with specialist historian",
+                "Lunch at private haveli with cooking demonstration",
+                "Shopping with personal assistant at designer boutiques",
+                "Evening cultural performance with premium seating"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Private transfer to Agra in luxury vehicle",
+                "Check-in at Taj-view luxury hotel",
+                "Private guided tour of Taj Mahal with photographer",
+                "Exclusive Mughal-themed dinner on hotel terrace"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Sunrise champagne breakfast with Taj Mahal view",
+                "Private tour of Agra Fort and Itmad-ud-Daulah",
+                "Luxury drive to Jaipur with gourmet picnic lunch",
+                "Check-in at palace hotel in Jaipur"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Private elephant ride to Amber Fort with exclusive access",
+                "Royal lunch at former maharaja's residence",
+                "Private shopping tour with gemologist for jewelry",
+                "Exclusive cultural evening with folk dancers and royal dinner"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning hot air balloon ride over Pink City",
+                "Private tour of City Palace including restricted royal areas",
+                "Afternoon spa treatment with traditional herbs",
+                "Farewell dinner and luxury departure transfer"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Golden Triangle with Wildlife",
+          "image":"/GoldenTours/G5.png",
+          "description": "Combine the cultural highlights of the Golden Triangle with wildlife experiences at Ranthambore National Park. Spot tigers in their natural habitat while also exploring India's rich architectural and cultural heritage.",
+          "duration": "6 days",
+          "charge": 32000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Delhi and hotel check-in",
+                "Half-day Delhi city tour including Humayun's Tomb",
+                "Evening at leisure with welcome dinner"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning drive to Agra (4 hours)",
+                "Visit Taj Mahal and Agra Fort",
+                "Evening Kalakriti cultural show",
+                "Overnight in Agra"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Drive to Ranthambore via Fatehpur Sikri",
+                "Check-in at jungle resort",
+                "Evening wildlife documentary screening",
+                "Dinner with wildlife expert talk"
+              ]
+            },
+            {
+              "day": 4,
+              "activities": [
+                "Early morning jungle safari in Ranthambore National Park",
+                "Afternoon visit to Ranthambore Fort",
+                "Evening safari in different zone of the park",
+                "Bonfire dinner at resort"
+              ]
+            },
+            {
+              "day": 5,
+              "activities": [
+                "Morning drive to Jaipur",
+                "Visit Amber Fort and City Palace",
+                "Evening light and sound show at Amer",
+                "Overnight in Jaipur"
+              ]
+            },
+            {
+              "day": 6,
+              "activities": [
+                "Morning visit to Hawa Mahal and Jantar Mantar",
+                "Shopping at local markets",
+                "Departure from Jaipur"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

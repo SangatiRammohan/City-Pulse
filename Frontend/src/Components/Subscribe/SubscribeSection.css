@@ -1,0 +1,251 @@
+/* SubscribeSection.css - Complete Styling */
+
+.subscribe-container {
+  background: linear-gradient(135deg, #54a15d 0%, #6fbf73 100%);
+  padding: 4rem 2rem;
+  margin: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+    background: url(../../assets/Subscribe/sbg1.png) no-repeat center/cover;
+  opacity: 0.3;
+}
+
+.subscribe-content {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.subscribe-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.subscribe-content h2 {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0 0 1rem;
+  font-weight: 700;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.subscribe-content > p {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 1.125rem;
+  margin: 0 0 2.5rem;
+  line-height: 1.6;
+}
+
+/* Form */
+.subscribe-form {
+  display: flex;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.input-wrapper {
+  position: relative;
+  flex: 1;
+  min-width: 280px;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #666;
+  pointer-events: none;
+}
+
+.subscribe-input {
+  width: 100%;
+  padding: 1rem 1.25rem 1rem 3.25rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.subscribe-input:focus {
+  outline: none;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.subscribe-input::placeholder {
+  color: #999;
+}
+
+.subscribe-input:disabled {
+  background: #f5f5f5;
+  cursor: not-allowed;
+}
+
+.subscribe-button {
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  background: white;
+  color: #54a15d;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  white-space: nowrap;
+}
+
+.subscribe-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background: #f8f8f8;
+}
+
+.subscribe-button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.subscribe-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.subscribe-button.subscribed {
+  background: #4caf50;
+  color: white;
+}
+
+/* Loading Spinner */
+.spinner-small {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(84, 161, 93, 0.3);
+  border-top-color: #54a15d;
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Subscribe Note */
+.subscribe-note {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.875rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .subscribe-container {
+    padding: 3rem 1.5rem;
+    margin: 3rem 0;
+  }
+
+  .subscribe-content h2 {
+    font-size: 2rem;
+  }
+
+  .subscribe-content > p {
+    font-size: 1rem;
+  }
+
+  .subscribe-form {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .input-wrapper {
+    min-width: 100%;
+  }
+
+  .subscribe-button {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .subscribe-note {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .subscribe-container {
+    padding: 2.5rem 1rem;
+  }
+
+  .subscribe-content h2 {
+    font-size: 1.75rem;
+  }
+
+  .subscribe-icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .subscribe-icon svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .subscribe-input {
+    padding: 0.875rem 1rem 0.875rem 3rem;
+    font-size: 0.9375rem;
+  }
+
+  .input-icon {
+    left: 1rem;
+  }
+
+  .subscribe-button {
+    padding: 0.875rem 2rem;
+    font-size: 0.9375rem;
+  }
+}

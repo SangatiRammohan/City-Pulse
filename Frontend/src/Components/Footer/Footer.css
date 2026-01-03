@@ -1,0 +1,328 @@
+/* Professional Footer - Orange & Olive Color Scheme */
+.footer {
+    background-color: #212529; /* Deeper olive background for professional look */
+    color: #f5f5f5;
+    padding: 4rem 0 2rem;
+    font-family: 'Arial', sans-serif;
+    margin-top: auto; /* Push footer to bottom */
+    position: relative; /* Remove any absolute positioning */
+    width: 100%;
+    z-index: 1; /* Ensure footer doesn't overlap content */
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.footer-section {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-section h4 {
+    color: #ffffff;
+    margin-bottom: 1.2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.footer-section h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: #54a15d; /* Orange accent */
+}
+
+/* Logo Section */
+.logo-section .footer-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.logo-image {
+    max-width: 100px;
+    margin-bottom: 1.2rem;
+    border-radius: 50%;
+}
+
+.logo-tagline {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.company-description {
+    color: #cccccc;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* Navigation Section */
+.navigation-section ul,
+.tours-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation-section ul li,
+.tours-section ul li {
+    margin-bottom: 0.9rem;
+}
+
+.navigation-section ul li a,
+.tours-section ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: block;
+    position: relative;
+    padding-left: 15px;
+}
+
+.navigation-section ul li a::before,
+.tours-section ul li a::before {
+    content: '›';
+    position: absolute;
+    left: 0;
+    color: #54a15d; 
+}
+
+.navigation-section ul li a:hover,
+.tours-section ul li a:hover {
+    color: #54a15d;
+    transform: translateX(3px);
+}
+
+/* Contact Section */
+.contact-section address {
+    font-style: normal;
+    margin-bottom: 1.5rem;
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.contact-info {
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+}
+
+.contact-icon {
+    margin-right: 10px;
+    color: #54a15d;
+    font-size: 1rem;
+    min-width: 20px;
+}
+
+.contact-text {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+}
+
+.contact-link {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #54a15d;
+}
+
+/* Newsletter Section */
+.newsletter-section p {
+    color: #e0e0e0;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin-bottom: 1.2rem;
+}
+
+.newsletter-form {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 0.9rem;
+    border-radius: 4px 0 0 4px;
+}
+
+.newsletter-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.newsletter-input:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.newsletter-button {
+    background-color: #54a15d; /* Fixed missing # */
+    color: #ffffff;
+    border: none;
+    padding: 0 15px;
+    cursor: pointer;
+    font-weight: 600;
+    border-radius: 0 4px 4px 0;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+    background-color: #4a8f52; /* Darker shade for hover */
+}
+
+.instagram-photo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Added gap for better spacing */
+}
+
+.instagram-photo img {
+    width: 50px;
+    height: 50px; /* Fixed aspect ratio */
+    object-fit: cover; /* Ensure images don't distort */
+    border-radius: 8px; /* Rounded corners */
+    transition: transform 0.3s ease;
+}
+
+.instagram-photo img:hover {
+    transform: scale(1.1);
+}
+
+/* Social Media */
+.social-media {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    text-decoration: none; /* Remove underline */
+}
+
+.social-icon:hover {
+    background-color: #54a15d; 
+    transform: translateY(-3px);
+    color: #ffffff; /* Maintain white color on hover */
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 2rem auto 0;
+    padding: 1.5rem 2rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.copyright {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.footer-links a {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #54a15d; 
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .footer-links {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+    
+    .newsletter-input {
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+    
+    .newsletter-button {
+        border-radius: 4px;
+        padding: 10px;
+    }
+}
+
+/* Ensure the app layout doesn't cause footer to cover content */
+.app-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+    padding-bottom: 2rem; /* Add some space above footer */
+}

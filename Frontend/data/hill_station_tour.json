@@ -1,0 +1,195 @@
+{
+    "hill_station_tours": {
+      "title": "Hill Station Weekend Escapes",
+      "subtitle": "Discover India's most enchanting mountain retreats",
+      "bannerImage": "/HillStation/h1.png",
+      "description": "Escape the heat and hustle of city life with our curated hill station weekend getaways. Experience cool weather, stunning mountain views, and rejuvenating experiences in India's most beautiful highland destinations.",
+      "duration": "2-3 days",
+      "price": "Starting from ₹12,000 per person",
+      "inclusions": [
+        "Comfortable accommodation in mountain resorts",
+        "Daily breakfast and dinner",
+        "All transfers in air-conditioned vehicles",
+        "Guided sightseeing tours",
+        "Welcome drink on arrival",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival & Local Exploration",
+          "description": "Arrive at your chosen hill station, check into your hotel, and spend the afternoon exploring nearby viewpoints and attractions. Enjoy a welcome dinner featuring local mountain cuisine."
+        },
+        {
+          "day": 2,
+          "title": "Full Day Excursion",
+          "description": "After breakfast, embark on a full-day tour of major attractions including viewpoints, lakes, waterfalls, and local markets. Experience the natural beauty and cultural charm of the destination."
+        },
+        {
+          "day": 3,
+          "title": "Nature Walk & Departure",
+          "description": "Begin your day with an optional early morning nature walk. After breakfast, enjoy some free time before checking out and departing with wonderful memories."
+        }
+      ],
+      "highlights": [
+        "Cool mountain climate perfect for summer escapes",
+        "Breathtaking views of valleys and mountain ranges",
+        "Colonial-era charm and architecture",
+        "Adventure activities like trekking and boating",
+        "Local delicacies and mountain specialties"
+      ],
+      "accommodations": [
+        {
+          "name": "Shimla Heritage Resort",
+          "description": "Colonial-style property offering panoramic Himalayan views, vintage decor, fireplaces, and garden dining experiences."
+        },
+        {
+          "name": "Ooty Plantation Retreat",
+          "description": "Charming cottages surrounded by tea and spice plantations, featuring rustic decor, organic dining, and nature trails."
+        },
+        {
+          "name": "Darjeeling Mountain Lodge",
+          "description": "Cozy property with spectacular Kanchenjunga views, traditional Himalayan architecture, and tea garden surroundings."
+        },
+        {
+          "name": "Kodaikanal Lakeside Hotel",
+          "description": "Serene accommodation near the star-shaped lake with misty mountain views, bonfire facilities, and boating access."
+        }
+      ],
+      "gallery": [
+        "/images/shimla-mall-road.jpg",
+        "/images/ooty-botanical-gardens.jpg",
+        "/images/darjeeling-tea-gardens.jpg",
+        "/images/kodaikanal-lake.jpg",
+        "/images/mountain-trekking.jpg",
+        "/images/pine-forests.jpg",
+        "/images/heritage-buildings.jpg",
+        "/images/mountain-sunrise.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "Shimla",
+          "image":"/HillStation/h2.png",
+          "description": "The former summer capital of British India, Shimla offers colonial charm, Mall Road shopping, and stunning Himalayan panoramas. Perfect for heritage walks and mountain adventures.",
+          "duration": "3 days",
+          "charge": 15000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at heritage resort",
+                "Evening stroll on historic Mall Road",
+                "Welcome dinner at heritage restaurant"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Visit to Viceregal Lodge and gardens",
+                "Explore Jakhu Temple and meet the monkeys",
+                "Ridge and Christ Church tour",
+                "Shopping for woolen items and handicrafts"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning excursion to Kufri for snow views",
+                "Horse riding in pine forests",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Darjeeling",
+          "image": "/HillStation/h3.png",
+          "description": "Famous for its tea plantations and views of Mt. Kanchenjunga, Darjeeling offers toy train rides, Buddhist monasteries, and colonial charm in an Eastern Himalayan setting.",
+          "duration": "3 days",
+          "charge": 14500,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at tea estate property",
+                "Visit to Happy Valley Tea Estate",
+                "Evening at Chowrasta Mall"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Early morning visit to Tiger Hill for sunrise",
+                "Ghoom Monastery exploration",
+                "Toy Train joy ride",
+                "Himalayan Mountaineering Institute tour"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Tea tasting experience",
+                "Shopping for Darjeeling tea and handicrafts",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Ooty",
+          "image":"/HillStation/h4.png",
+          "description": "The 'Queen of Hill Stations' in the Nilgiri Mountains offers colonial bungalows, botanical gardens, and a pleasant year-round climate. Famous for its toy train and chocolate.",
+          "duration": "2 days",
+          "charge": 12000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at plantation retreat",
+                "Visit to Botanical Gardens",
+                "Boating in Ooty Lake",
+                "Evening at Charing Cross Market"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning Nilgiri Mountain Railway toy train ride",
+                "Visit to Doddabetta Peak",
+                "Tea factory and chocolate shopping",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kodaikanal",
+          "image": "/HillStation/h5.png",
+          "description": "Known as the 'Princess of Hill Stations', Kodaikanal features a star-shaped lake, misty waterfalls, and verdant forests in the Western Ghats. Perfect for quiet getaways.",
+          "duration": "2 days",
+          "charge": 13000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at lakeside property",
+                "Boat ride on Kodaikanal Lake",
+                "Visit to Coaker's Walk for valley views",
+                "Evening bonfire with dinner"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Morning visit to Bryant Park",
+                "Pillar Rocks viewpoint",
+                "Silver Cascade waterfall stop",
+                "Homemade chocolate shopping",
+                "Departure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }

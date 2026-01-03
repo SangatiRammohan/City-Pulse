@@ -1,0 +1,224 @@
+/* TripBookingProcess.css */
+
+.trip-process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .trip-process-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+  
+  .process-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 4rem 0;
+  }
+  
+  /* Curved connecting lines */
+  .process-timeline::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 10%;
+    right: 10%;
+    height: 6px;
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    border-radius: 6px;
+    z-index: 1;
+  }
+  
+  .process-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    width: 22%;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .process-step:hover {
+    transform: translateY(-5px);
+  }
+  
+  .process-step-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    border: 4px solid #e0e0e0;
+  }
+  
+  .process-step-icon svg {
+    width: 40px;
+    height: 40px;
+    color: #95a5a6;
+    transition: all 0.3s ease;
+  }
+  
+  .process-step.active .process-step-icon {
+    border-color: #48d556;
+    transform: scale(1.1);
+  }
+  
+  .process-step.active .process-step-icon svg {
+    color: #54a15b;
+  }
+  
+  .process-step-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  
+  .process-step.active .process-step-title {
+    color: #54a15b;
+  }
+  
+  .process-step-description {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    text-align: center;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+  
+  /* Detailed description appears on active step */
+  .process-step .process-step-detailed-description {
+    display: none;
+    font-size: 0.85rem;
+    color: #7f8c8d;
+    text-align: center;
+    padding: 1rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    margin-top: 1rem;
+    max-width: 90%;
+    transition: all 0.3s ease;
+  }
+  .process-step .process-step-detaileddescription{
+    color: #454b4b;
+    text-align: center;
+    display:none;
+  }
+  .process-step.active .process-step-detailed-description {
+    display: block;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Responsive design */
+  @media (max-width: 992px) {
+    .process-timeline {
+      flex-wrap: wrap;
+    }
+    
+    .process-timeline::before {
+      display: none;
+    }
+    
+    .process-step {
+      width: 48%;
+      margin-bottom: 2rem;
+    }
+    
+    .trip-process-title {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .process-step {
+      width: 95%;
+      margin-bottom: 4rem;
+     
+    }
+    
+    .process-step-icon {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .process-step-icon svg {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .trip-process-title {
+      font-size: 1.8rem;
+    }
+    
+    /* Create vertical connecting lines for mobile */
+    .process-timeline {
+      flex-direction: column;
+      justify-content: center;
+      /* position: relative; */
+      align-items: center;
+    }
+    
+    .process-timeline::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 40px;
+      width: 6px;
+      background: linear-gradient(180deg, #3498db, #2ecc71);
+      border-radius: 6px;
+      z-index: 1;
+    }
+    
+    .process-step {
+      flex-direction: row;
+      align-items: flex-start;
+      text-align: center;
+      padding-left: 60px;
+    }
+    
+    .process-step-icon {
+      position: absolute;
+      left: 0;
+      margin-bottom: 0;
+    }
+    
+    .process-step-title, 
+    .process-step-description {
+      /* text-align: left; */
+      flex-direction: column;
+      padding-left: 1rem;
+    }
+  }
+  
+  /* Additional animations */
+  .process-step.active {
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.03); }
+    100% { transform: scale(1); }
+  }

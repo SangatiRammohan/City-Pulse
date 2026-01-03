@@ -1,0 +1,65 @@
+.video-hero-container {
+    position: relative;
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+  .video-hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+  }
+  
+  .video-hero-content {
+    position: relative;
+    z-index: 1;
+    color: #fff;
+    max-width: 700px;
+    padding: 20px;
+  }
+  
+  .video-hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .video-hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  .explore-tours-btn {
+    background-color: #54a15d;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  .explore-tours-btn:hover {
+    background-color: #54aa5d;
+  }
+  

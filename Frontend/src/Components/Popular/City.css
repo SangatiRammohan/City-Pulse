@@ -1,0 +1,272 @@
+/* City.css */
+
+.mainsection {
+    padding: 4rem 2rem;
+    background-color: #f8f9fa;
+  }
+  
+  .populartour {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .populartour h3 {
+    color: #54a159;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+  
+  .populartour h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+  
+  .populartour .line {
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #54a159;
+    margin: 0 auto 1.5rem;
+    border-radius: 2px;
+  }
+  
+  .populartour h5 {
+    color: #6c757d;
+    font-weight: 400;
+    font-size: 1rem;
+  }
+  
+  /* Carousel container */
+  .tourCarousel {
+    position: relative;
+    padding: 0 2rem;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+  
+  /* Tour card */
+  .tourCard-wrapper {
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  .tourCards {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tourCards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .tour-image-container {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+  }
+  
+  .tourCards img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .tourCards:hover img {
+    transform: scale(1.05);
+  }
+  
+  .tour-date {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: #54a159;
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-top-right-radius: 8px;
+  }
+  
+  .tourdetails {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tourdetails h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  
+  .tour-description {
+    color: #6c757d;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+  
+  .tourtime {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  
+  .tour-info {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    margin-bottom: 8px;
+  }
+  
+  .info-icon {
+    margin-right: 5px;
+  }
+  
+  .tourdays {
+    color: #2c3e50;
+    font-weight: 500;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .tourbtn {
+    background-color: #54a159;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    align-self: center;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .tourbtn:hover {
+    background-color: #212529;
+  }
+  
+  /* Custom arrows */
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 40px;
+    height: 40px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    background-color: #54a159;
+    color: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    transition: opacity 0.3s, background-color 0.3s;
+  }
+  
+  .slick-arrow:hover {
+    opacity: 1;
+    background-color: #212529;
+  }
+  
+  .custom-prev-arrow {
+    left: -10px;
+  }
+  
+  .custom-next-arrow {
+    right: -10px;
+  }
+  
+  .prev-icon, .next-icon {
+    font-size: 1.5rem;
+    line-height: 1;
+    font-style: normal;
+  }
+  
+  /* Custom dots */
+  .slick-dots {
+    bottom: -40px;
+  }
+  
+  .custom-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .slick-active .custom-dot {
+    background-color: #54a159;
+    width: 12px;
+    height: 12px;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1024px) {
+    .tourCards {
+      height: 480px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .mainsection {
+      padding: 3rem 1rem;
+    }
+    
+    .populartour h1 {
+      font-size: 2rem;
+    }
+    
+    .tourCards {
+      height: auto;
+      max-width: 400px;
+      margin: 0 auto;
+    }
+    
+    .tourCarousel {
+      padding: 0 1rem;
+    }
+    
+    .custom-prev-arrow {
+      left: -5px;
+    }
+    
+    .custom-next-arrow {
+      right: -5px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .populartour h1 {
+      font-size: 1.8rem;
+    }
+    
+    .slick-arrow {
+      width: 35px;
+      height: 35px;
+    }
+  }

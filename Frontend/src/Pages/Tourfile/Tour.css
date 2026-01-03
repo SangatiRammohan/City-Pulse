@@ -1,0 +1,1309 @@
+/* CSS Variables - Light Mode */
+:root {
+  --white: #ffffff;
+  --dark-gray: #212529;
+  --light-gray: #f8f9fa;
+  --lighter-gray: #e9ecef;
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-muted: #9ca3af;
+  
+  --primary-green: #54a15d;
+  --hover-green: #45894d;
+  --light-green: #e8f5e9;
+  --accent-green: #6fbf73;
+  --dark-green: #3d7a44;
+  
+  --overlay-light: rgba(255, 255, 255, 0.95);
+  --overlay-dark: rgba(0, 0, 0, 0.5);
+  --border-color: #e5e7eb;
+  --border-light: #f3f4f6;
+  
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-default: 0 4px 6px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 6px 12px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.12);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-green: 0 4px 15px rgba(84, 161, 93, 0.2);
+  --shadow-green-hover: 0 8px 25px rgba(84, 161, 93, 0.3);
+  
+  --border-radius: 12px;
+  --border-radius-lg: 20px;
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading States */
+.package-container.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+}
+
+/* Error States */
+.package-container.error {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+  color: var(--text-primary);
+  min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.package-container.error h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.package-container.error p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+  color: var(--text-secondary);
+}
+
+.back-to-home {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  transition: var(--transition);
+  box-shadow: var(--shadow-green);
+}
+
+.back-to-home:hover {
+  background: linear-gradient(135deg, var(--hover-green), var(--dark-green));
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green-hover);
+}
+
+/* Tour Container - Single Destination View */
+.tour-container {
+  min-height: 100vh;
+  background: var(--white);
+}
+
+/* Hero Section */
+.tour-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tour-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+  z-index: 1;
+}
+
+.tour-hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: var(--white);
+  padding: 2rem;
+  max-width: 800px;
+  animation: fadeInUp 1s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tour-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  margin-bottom: 1rem;
+  text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.4);
+  line-height: 1.2;
+}
+
+.tour-subtitle {
+  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+  margin-bottom: 2rem;
+  opacity: 0.95;
+  text-shadow: 1px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.back-button {
+  display: inline-block;
+  padding: 0.875rem 2rem;
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  transition: var(--transition);
+  backdrop-filter: blur(10px);
+}
+
+.back-button:hover {
+  background: var(--primary-green);
+  border-color: var(--primary-green);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green-hover);
+}
+
+/* Content Container */
+.tour-content-container {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  background: var(--light-gray);
+}
+
+/* Tour Details */
+.tour-details {
+  color: var(--text-primary);
+}
+
+.tour-info-section {
+  margin-bottom: 3rem;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-default);
+  transition: var(--transition);
+}
+
+.tour-info-section:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.tour-info-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.tour-info-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  border-radius: 2px;
+}
+
+.tour-info-section p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+/* Itinerary Timeline */
+.itinerary-timeline {
+  position: relative;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--primary-green), var(--accent-green));
+  border-radius: 2px;
+}
+
+.itinerary-day {
+  position: relative;
+  display: flex;
+  margin-bottom: 2.5rem;
+  padding-left: 80px;
+  animation: slideInLeft 0.6s ease-out;
+  animation-fill-mode: both;
+}
+
+.itinerary-day:nth-child(odd) {
+  animation-delay: 0.1s;
+}
+
+.itinerary-day:nth-child(even) {
+  animation-delay: 0.2s;
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.day-number {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: var(--shadow-green);
+  border: 4px solid var(--white);
+  z-index: 2;
+}
+
+.day-content {
+  flex: 1;
+  background: var(--white);
+  padding: 1.5rem 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.day-content:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateX(5px);
+}
+
+.day-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.day-activities ul {
+  list-style: none;
+  padding: 0;
+}
+
+.day-activities li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.day-activities li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Sidebar */
+.tour-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* ============================================
+   TOUR BOOKING CARD - PREMIUM DESIGN
+============================================ */
+.tour-booking-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 0;
+  border: none;
+  color: var(--text-primary);
+  box-shadow: 0 10px 40px rgba(84, 161, 93, 0.2);
+  transition: var(--transition);
+  overflow: hidden;
+  position: relative;
+}
+
+.tour-booking-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green), var(--hover-green));
+  background-size: 200% 100%;
+  animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.tour-booking-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(84, 161, 93, 0.3);
+}
+
+.tour-booking-card h2 {
+  font-size: 1.75rem;
+  margin: 0;
+  padding: 2rem 2rem 1.5rem;
+  color: var(--white);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+  text-align: center;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.tour-booking-card h2::after {
+  display: none;
+}
+
+/* Booking Details Section */
+.booking-details {
+  margin: 0;
+  padding: 2rem;
+  background: var(--white);
+}
+
+.booking-detail {
+  padding: 0;
+  margin-bottom: 1.5rem;
+  background: transparent;
+  border: none;
+  transition: var(--transition);
+}
+
+.booking-detail:last-child {
+  margin-bottom: 0;
+}
+
+.detail-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+  border-radius: var(--border-radius);
+  border: 2px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.detail-content::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(to bottom, var(--primary-green), var(--accent-green));
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.booking-detail:hover .detail-content {
+  background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+  border-color: var(--primary-green);
+  transform: translateX(5px);
+  box-shadow: var(--shadow-md);
+}
+
+.booking-detail:hover .detail-content::before {
+  transform: scaleY(1);
+}
+
+.detail-label {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+}
+
+.detail-value {
+  font-weight: 800;
+  color: var(--primary-green);
+  font-size: 1.5rem;
+  text-shadow: 0 2px 4px rgba(84, 161, 93, 0.1);
+  letter-spacing: -0.5px;
+}
+
+/* Book Now Button */
+.book-now-button {
+  width: calc(100% - 4rem);
+  margin: 0 2rem 2rem;
+  padding: 1.25rem 2rem;
+  background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+  color: var(--white);
+  border: none;
+  border-radius: var(--border-radius);
+  font-size: 1.125rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: var(--transition);
+  box-shadow: 0 6px 20px rgba(84, 161, 93, 0.4);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.book-now-button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.book-now-button:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.book-now-button span {
+  position: relative;
+  z-index: 1;
+}
+
+.book-now-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(84, 161, 93, 0.5);
+  background: linear-gradient(135deg, var(--hover-green), var(--dark-green));
+}
+
+.book-now-button:active {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(84, 161, 93, 0.4);
+}
+
+/* Tour Info Card */
+.tour-info-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-default);
+  transition: var(--transition);
+}
+
+.tour-info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-green);
+}
+
+.tour-info-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.tour-info-card h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: var(--primary-green);
+  border-radius: 2px;
+}
+
+.included-list,
+.highlights-list {
+  list-style: none;
+  padding: 0;
+}
+
+.included-list li,
+.highlights-list li {
+  padding: 0.875rem 0;
+  padding-left: 1.75rem;
+  position: relative;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border-light);
+  transition: var(--transition);
+}
+
+.included-list li:hover,
+.highlights-list li:hover {
+  color: var(--text-primary);
+  padding-left: 2rem;
+}
+
+.included-list li:last-child,
+.highlights-list li:last-child {
+  border-bottom: none;
+}
+
+.included-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.highlights-list li::before {
+  content: '★';
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+/* Package Container - Main Package View */
+.package-container {
+  min-height: 100vh;
+  background: var(--white);
+  color: var(--text-primary);
+}
+
+.package-header {
+  text-align: center;
+  padding: 4rem 2rem 2rem;
+  background: linear-gradient(135deg, var(--light-green) 0%, var(--white) 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.package-header h1 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.package-subtitle {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.package-banner {
+  margin: 3rem auto;
+  max-width: 1400px;
+  padding: 0 2rem;
+}
+
+.package-banner img {
+  width: 100%;
+  height: 450px;
+  object-fit: cover;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  transition: var(--transition);
+}
+
+.package-banner img:hover {
+  transform: scale(1.02);
+}
+
+.package-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: var(--light-gray);
+}
+
+.package-description {
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  margin-bottom: 3rem;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-default);
+  transition: var(--transition);
+}
+
+.package-description:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.package-description h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.package-description h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  border-radius: 2px;
+}
+
+.package-description p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.package-details {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.detail-item {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-default);
+  transition: var(--transition);
+}
+
+.detail-item:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--primary-green);
+}
+
+.detail-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.detail-item p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+.detail-item ul {
+  list-style: none;
+  padding: 0;
+}
+
+.detail-item li {
+  padding: 0.5rem 0;
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+}
+
+.detail-item li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--primary-green);
+  font-weight: bold;
+}
+
+/* Destinations Grid */
+.destinations-section {
+  margin-bottom: 3rem;
+  background: var(--white);
+  padding: 3rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-default);
+}
+
+.destinations-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--primary-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.destinations-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  border-radius: 2px;
+}
+
+.destinations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2.5rem;
+}
+
+.destination-card {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  box-shadow: var(--shadow-default);
+}
+
+.destination-card:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-green);
+}
+
+.destination-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background: var(--light-gray);
+}
+
+.destination-image::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.destination-card:hover .destination-image::after {
+  opacity: 1;
+}
+
+.destination-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.destination-card:hover .destination-image img {
+  transform: scale(1.1);
+}
+
+.destination-info {
+  padding: 2rem;
+}
+
+.destination-info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+  font-weight: 700;
+  transition: var(--transition);
+}
+
+.destination-card:hover .destination-info h3 {
+  color: var(--primary-green);
+}
+
+.destination-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--text-secondary);
+}
+
+.destination-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.duration-tag,
+.price-tag {
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.duration-tag {
+  background: var(--light-green);
+  color: var(--primary-green);
+  border: 1px solid var(--primary-green);
+}
+
+.price-tag {
+  background: var(--primary-green);
+  color: var(--white);
+  box-shadow: var(--shadow-green);
+}
+
+.view-details-button {
+  display: inline-block;
+  width: 100%;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, var(--primary-green), var(--hover-green));
+  color: var(--white);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  font-weight: 600;
+  text-align: center;
+  transition: var(--transition);
+  box-shadow: var(--shadow-green);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.view-details-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-green-hover);
+  background: linear-gradient(135deg, var(--hover-green), var(--dark-green));
+}
+
+/* Additional Sections */
+.highlights-section,
+.accommodations-section {
+  margin-bottom: 3rem;
+  background: var(--white);
+  padding: 2.5rem;
+  border-radius: var(--border-radius-lg);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-default);
+  transition: var(--transition);
+}
+
+.highlights-section:hover,
+.accommodations-section:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.highlights-section h2,
+.accommodations-section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-green);
+  font-weight: 700;
+  position: relative;
+  padding-bottom: 0.75rem;
+}
+
+.highlights-section h2::after,
+.accommodations-section h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-green), var(--accent-green));
+  border-radius: 2px;
+}
+
+.accommodations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.accommodation-card {
+  background: var(--light-gray);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+
+.accommodation-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  background: var(--white);
+  border-color: var(--primary-green);
+}
+
+.accommodation-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  color: var(--primary-green);
+  font-weight: 700;
+}
+
+.accommodation-card p {
+  line-height: 1.7;
+  color: var(--text-secondary);
+}
+
+/* Modal Styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  backdrop-filter: blur(5px);
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.popup-content {
+  background: var(--white);
+  border-radius: var(--border-radius-lg);
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border-color);
+  animation: slideInUp 0.3s ease-out;
+}
+
+.popup-content.payment-popup {
+  max-width: 800px;
+  width: 100%;
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Custom Scrollbar for Popup */
+.popup-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.popup-content::-webkit-scrollbar-track {
+  background: var(--light-gray);
+  border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb {
+  background: var(--primary-green);
+  border-radius: 4px;
+}
+
+.popup-content::-webkit-scrollbar-thumb:hover {
+  background: var(--hover-green);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .tour-content-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .tour-sidebar {
+    order: -1;
+  }
+
+  .package-content {
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .tour-hero {
+    height: 50vh;
+    min-height: 400px;
+    background-attachment: scroll;
+  }
+  
+  .tour-content-container {
+    padding: 2rem 1rem;
+  }
+  
+  .tour-info-section {
+    padding: 1.5rem;
+  }
+  
+  .tour-booking-card h2 {
+    font-size: 1.5rem;
+    padding: 1.5rem 1.5rem 1.25rem;
+  }
+
+  .booking-details {
+    padding: 1.5rem;
+  }
+
+  .detail-content {
+    padding: 1.25rem;
+  }
+
+  .detail-label {
+    font-size: 0.8125rem;
+  }
+
+  .detail-value {
+    font-size: 1.25rem;
+  }
+
+  .book-now-button {
+    width: calc(100% - 3rem);
+    margin: 0 1.5rem 1.5rem;
+    padding: 1.125rem 1.5rem;
+    font-size: 1rem;
+  }
+  
+  .tour-info-card {
+    padding: 1.5rem;
+  }
+  
+  .package-content {
+    padding: 1.5rem 1rem;
+  }
+  
+  .package-header {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .package-banner {
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+
+  .package-banner img {
+    height: 300px;
+  }
+  
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .destinations-section {
+    padding: 2rem 1.5rem;
+  }
+  
+  .destination-details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .itinerary-day {
+    padding-left: 60px;
+  }
+  
+  .day-number {
+    width: 45px;
+    height: 45px;
+    font-size: 0.8rem;
+  }
+  
+  .popup-content {
+    max-width: 95vw;
+    margin: 1rem;
+  }
+
+  .package-details {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .accommodations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tour-hero {
+    height: 40vh;
+    min-height: 300px;
+  }
+  
+  .tour-hero-overlay {
+    padding: 1rem;
+  }
+
+  .tour-content-container {
+    padding: 1.5rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .tour-info-section {
+    padding: 1.25rem;
+  }
+
+  .day-content {
+    padding: 1.25rem 1.5rem;
+  }
+
+  .tour-booking-card h2 {
+    font-size: 1.25rem;
+    padding: 1.25rem 1.25rem 1rem;
+  }
+
+  .booking-details {
+    padding: 1.25rem;
+  }
+
+  .booking-detail {
+    margin-bottom: 1.25rem;
+  }
+
+  .detail-content {
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .detail-value {
+    font-size: 1.5rem;
+  }
+
+  .book-now-button {
+    width: calc(100% - 2.5rem);
+    margin: 0 1.25rem 1.25rem;
+    padding: 1rem 1.25rem;
+    font-size: 0.9375rem;
+    letter-spacing: 1px;
+  }
+  
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .destinations-section {
+    padding: 1.5rem 1rem;
+  }
+
+  .destination-info {
+    padding: 1.5rem;
+  }
+  
+  .destination-card {
+    margin: 0;
+  }
+
+  .package-banner img {
+    height: 250px;
+  }
+
+  .highlights-section,
+  .accommodations-section,
+  .package-description {
+    padding: 1.5rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Focus States */
+.view-details-button:focus,
+.book-now-button:focus,
+.back-button:focus,
+.back-to-home:focus {
+  outline: 2px solid var(--primary-green);
+  outline-offset: 2px;
+}
+
+/* Print Styles */
+@media print {
+  .tour-hero,
+  .back-button,
+  .book-now-button,
+  .view-details-button {
+    display: none;
+  }
+
+  .tour-content-container {
+    grid-template-columns: 1fr;
+  }
+}

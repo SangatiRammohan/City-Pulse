@@ -1,0 +1,236 @@
+{
+    "kerala_tours": {
+      "title": "Kerala Backwater Paradise",
+      "subtitle": "Experience God's Own Country with its tranquil backwaters, pristine beaches, and lush hill stations",
+      "bannerImage": "/KeralaTours/k1.png",
+      "description": "Discover the enchanting beauty of Kerala with our carefully curated tour packages. From cruising on traditional houseboats through serene backwaters to exploring spice plantations in the Western Ghats, experience the perfect blend of nature, culture, and relaxation in this tropical paradise.",
+      "duration": "3-7 days",
+      "price": "Starting from ₹15,000 per person",
+      "inclusions": [
+        "Accommodation in premium hotels and resorts",
+        "Daily breakfast and select meals",
+        "Private air-conditioned vehicle for transfers",
+        "Houseboat cruise with meals",
+        "Experienced local guide for sightseeing",
+        "Traditional Kathakali dance show",
+        "All applicable taxes"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival in Kochi",
+          "description": "Arrive in Kochi, the gateway to Kerala. Check into your hotel and spend the evening exploring the historic Fort Kochi area with its Chinese fishing nets and colonial architecture."
+        },
+        {
+          "day": 2,
+          "title": "Kochi Sightseeing & Kathakali",
+          "description": "Visit major attractions including Mattancherry Palace, Jewish Synagogue, and St. Francis Church. Evening cultural experience with traditional Kathakali dance performance."
+        },
+        {
+          "day": 3,
+          "title": "Alleppey Backwaters",
+          "description": "Transfer to Alleppey and board a traditional Kerala houseboat for an overnight cruise through the picturesque backwaters. Enjoy freshly prepared Kerala cuisine onboard."
+        },
+        {
+          "day": 4,
+          "title": "Thekkady & Spice Gardens",
+          "description": "Disembark and drive to Thekkady, home to Periyar Wildlife Sanctuary. Visit spice plantations and learn about Kerala's famous spices. Optional evening boat safari in Periyar Lake."
+        },
+        {
+          "day": 5,
+          "title": "Munnar Hill Station",
+          "description": "Drive to Munnar, a picturesque hill station surrounded by tea plantations. Visit tea museum and enjoy the cool climate amidst rolling hills and misty valleys."
+        },
+        {
+          "day": 6,
+          "title": "Munnar Exploration",
+          "description": "Full day exploring Munnar's attractions including Eravikulam National Park, Tea Museum, and Mattupetty Dam. Spectacular views of Western Ghats and tea estates."
+        },
+        {
+          "day": 7,
+          "title": "Departure",
+          "description": "After breakfast, transfer to Kochi airport/railway station for your onward journey, taking back wonderful memories of Kerala."
+        }
+      ],
+      "highlights": [
+        "Overnight stay on traditional Kerala houseboat",
+        "Visit to historic Fort Kochi and Chinese fishing nets",
+        "Spice plantation tours with expert guides",
+        "Scenic tea plantations of Munnar",
+        "Wildlife spotting at Periyar National Park",
+        "Authentic Kerala cuisine experiences",
+        "Traditional Ayurvedic treatments and massages"
+      ],
+      "accommodations": [
+        {
+          "name": "Heritage Hotel Kochi",
+          "description": "Colonial-era boutique hotel with traditional architecture, antique furnishings, and garden courtyard in Fort Kochi."
+        },
+        {
+          "name": "Premium Houseboat Alleppey",
+          "description": "Luxury traditional houseboat with private bedrooms, deck area, and onboard chef preparing authentic Kerala cuisine."
+        },
+        {
+          "name": "Thekkady Jungle Resort",
+          "description": "Eco-friendly accommodation at the edge of Periyar Wildlife Sanctuary with spice garden surroundings and jungle views."
+        },
+        {
+          "name": "Munnar Tea Plantation Resort",
+          "description": "Hillside property surrounded by tea estates offering misty mountain views, plantation walks, and tea tasting experiences."
+        }
+      ],
+      "gallery": [
+        "/images/kerala-backwaters.jpg",
+        "/images/kerala-houseboat.jpg",
+        "/images/kerala-tea-plantations.jpg",
+        "/images/kerala-chinese-nets.jpg",
+        "/images/kerala-kathakali.jpg",
+        "/images/kerala-ayurveda.jpg",
+        "/images/kerala-spice-garden.jpg",
+        "/images/kerala-beach.jpg"
+      ],
+      "destinations": [
+        {
+          "name": "Alleppey Backwater Experience",
+          "image": "/KeralaTours/k2.png",
+          "description": "Experience the serene backwaters of Kerala on a traditional houseboat (kettuvallam) in Alleppey, known as the 'Venice of the East'. Cruise through palm-fringed canals, observe rural village life, and enjoy authentic Kerala cuisine.",
+          "duration": "3 days",
+          "charge": 18000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival in Kochi and transfer to Alleppey",
+                "Check-in at waterfront resort",
+                "Evening canoe ride through narrow canals",
+                "Traditional Kerala welcome dinner"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Board traditional houseboat for overnight cruise",
+                "Cruise through scenic backwater villages and canals",
+                "Visit to toddy shop and coir making village",
+                "Fresh seafood meals prepared onboard",
+                "Overnight stay on houseboat"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Sunrise views from houseboat deck",
+                "Morning village walk and interaction with locals",
+                "Disembark and transfer for departure",
+                "Optional Shikara boat ride in smaller canals"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Munnar Tea Country",
+          "image": "/KeralaTours/k3.png",
+          "description": "Discover the misty hill station of Munnar with its endless carpet of tea plantations, cool climate, and breathtaking mountain scenery. Visit tea factories, spot rare wildlife, and enjoy the refreshing highland atmosphere.",
+          "duration": "2 days",
+          "charge": 14000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at plantation resort",
+                "Visit to tea museum and factory",
+                "Tea tasting session with expert",
+                "Evening stroll through tea gardens",
+                "Bonfire dinner with mountain views"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Early morning visit to Eravikulam National Park (home to Nilgiri Tahr)",
+                "Photo stop at Mattupetty Dam and Echo Point",
+                "Visit to Kundala Lake and Top Station viewpoint",
+                "Shopping for tea and spices",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Kochi Heritage Tour",
+          "image": "/KeralaTours/k4.png",
+          "description": "Explore the rich multicultural heritage of Fort Kochi with its blend of Portuguese, Dutch, and British colonial influences alongside ancient Jewish and Arab trading histories. Visit historic sites, enjoy cultural performances, and taste unique fusion cuisine.",
+          "duration": "3 days",
+          "charge": 16000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at heritage hotel in Fort Kochi",
+                "Evening walk to see iconic Chinese fishing nets at sunset",
+                "Welcome dinner at historic spice trading restaurant"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Full day heritage tour including Mattancherry Palace (Dutch Palace)",
+                "Visit to Jewish Synagogue in Jew Town",
+                "St. Francis Church and Santa Cruz Basilica exploration",
+                "Spice market tour with expert guide",
+                "Evening Kathakali dance performance"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Morning cooking class featuring Kerala cuisine",
+                "Visit to Folklore Museum",
+                "Harbor cruise with views of modern Kochi",
+                "Shopping for antiques and handicrafts",
+                "Departure"
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Thekkady Wildlife Retreat",
+          "image": "/KeralaTours/k5.png",
+          "description": "Experience the wilderness of Periyar Tiger Reserve in Thekkady with its diverse flora and fauna. Explore spice plantations, take jungle treks, and enjoy boat safaris on Periyar Lake while staying in the misty Western Ghats.",
+          "duration": "3 days",
+          "charge": 17000,
+          "dayWisePlan": [
+            {
+              "day": 1,
+              "activities": [
+                "Arrival and check-in at jungle resort",
+                "Afternoon visit to spice plantation",
+                "Evening Kalaripayattu martial arts performance",
+                "Dinner with tribal music"
+              ]
+            },
+            {
+              "day": 2,
+              "activities": [
+                "Early morning guided jungle trek",
+                "Boat safari on Periyar Lake to spot wildlife",
+                "Visit to elephant camp",
+                "Green Walk program with forest department",
+                "Evening tribal village visit"
+              ]
+            },
+            {
+              "day": 3,
+              "activities": [
+                "Bamboo rafting experience (seasonal)",
+                "Visit to Ayurvedic garden and wellness center",
+                "Optional Ayurvedic massage treatment",
+                "Spice shopping at local market",
+                "Departure"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
