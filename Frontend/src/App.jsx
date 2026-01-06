@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation,useEffect } from 'react-router-dom';
 import Header from './Components/Header/Header';
 import Hero from './Components/Herosection/Hero';
 import City from './Components/Popular/City';
@@ -21,6 +21,8 @@ import ForgotPassword from './Pages/ForgotPassword/ForgotPassword';
 import ResetPassword from './Pages/ResetPassword/ResetPassword';
 import MyProfile from './Pages/MyProfile/MyProfile';
 import VerifyOTP from './Pages/VerifyOTP/VerifyOTP';
+import fixLeafletIcons from './utils/leafletIconFix';
+
 
 
 // Layout wrapper component
@@ -41,6 +43,9 @@ const AuthLayout = ({ children }) => {
 
 function App() {
   const location = useLocation();
+   useEffect(() => {
+    fixLeafletIcons();
+  }, []);
   
   // Check if current route is auth page
   const isAuthPage = location.pathname === '/signin' || location.pathname === '/signup';
