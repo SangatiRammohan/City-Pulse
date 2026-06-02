@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import api from '../../services/api';
 import './AuthModal.css'; // Import your CSS styles
 const AuthModal = ({ isOpen, onClose, mode: initialMode }) => {
   const [mode, setMode] = useState(initialMode);
