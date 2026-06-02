@@ -46,12 +46,13 @@ app.use(limiter);
 // Cors Configuration with More Robust Options
 const corsOptions = {
   origin: function (origin, callback) {
+  // NEW
     const allowedOrigins = [
       'http://localhost:5173',
       'http://localhost:3000',
       'http://127.0.0.1:5173',
       'http://127.0.0.1:3000',
-      // Add production frontend URLs here
+      'https://city-pulse-01.vercel.app',
     ];
     // Allow requests with no origin (like mobile apps, curl, Postman)
     if (!origin || allowedOrigins.indexOf(origin) !== -1) {
