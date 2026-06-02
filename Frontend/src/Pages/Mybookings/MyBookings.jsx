@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { bookingService } from '../Backend/services/api';
-import Swal from 'sweetalert2';
+import { bookingService } from '../../services/api';import Swal from 'sweetalert2';
 import './MyBookings.css';
 
 const MyBookings = () => {
