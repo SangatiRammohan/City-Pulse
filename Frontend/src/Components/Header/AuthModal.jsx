@@ -80,10 +80,14 @@ const AuthModal = ({ isOpen, onClose, mode: initialMode }) => {
     
     if (Object.keys(errors).length === 0) {
       setIsLoading(true);
-      try {
-        // Simulate API call
-        await new Promise(resolve => setTimeout(resolve, 1500));
-        console.log('Form submitted:', { mode, email, password, name });
+         try {
+        const endpoint = mode === 'signin' ? '/users/signin' : '/users/signup';
+        const payload = mode === 'signin'
+          ? { email, password }
+          : { name, email, password };
+        const response = await api.post(endpoint, payload);
+        localStorage.setItem('authToken', response.data.token);
+        localStorage.setItem('userEmail', email);
         onClose();
       } catch (error) {
         console.error('Authentication error:', error);
